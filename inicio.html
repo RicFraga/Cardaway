@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!--Import materialize.css-->
+  
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">CARDAWAY</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a class="btn">Postales</a></li>
+          <li><a class="btn">Crear Postal</a></li>
+          <li id="nav-li"><a href="#">Iniciar Sesión</a></li>
+          <li id="nav-li"><a href="#">Crear Tu Cuenta</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="myModal">
+      <div class="myCard">
+        <div class="card-content">
+          <a class="waves-effect waves-light btn">Enviar</a>
+          <a class="waves-effect waves-light btn">Editar</a>
+        </div>
+        <div class="container">
+          <img src="" alt="" class="modal-img" id="modal-test">
+        </div>
+      </div>
+      <div class="close">
+        <span id="close">X</span>
+      </div>
+    </div>
+
+    <div class="row" id="slider-row">
+      <div class="divBtn" id="prevBtn"></div>
+      <div class="container" id="slides-container">
+        <div class="mySlider-slides">
+          <img src="./img/s5.jpg" alt="" class="slider-img" id="lastClone">
+          <img src="./img/s1.jpg" alt="" class="slider-img">
+          <img src="./img/s2.jpg" alt="" class="slider-img">
+          <img src="./img/s3.jpg" alt="" class="slider-img">
+          <img src="./img/s4.jpg" alt="" class="slider-img">
+          <img src="./img/s5.jpg" alt="" class="slider-img">
+          <img src="./img/s1.jpg" alt="" class="slider-img" id="firstClone">
+        </div>
+      </div>
+      <div class="title">
+        <p>Destacados:</p>
+      </div>
+      <div class="divBtn" id="nextBtn"></div>
+    </div>
+
+    <div class="row">
+      <div class="col s12">
+        <h1 class="center-align" id="slogan">Conecta con las personas que amas</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="container" id="icon-container">
+        <div class="icon-div"><a href="" id="icons"><i class="material-icons">favorite_border</i></a></div>
+        <div class="icon-div"><a href="" id="icons"><i class="material-icons">date_range</i></a></div>
+        <div class="icon-div"><a href="" id="icons"><i class="material-icons">crop_original</i></a></div>
+        <div class="icon-div"><a href="" id="icons"><i class="material-icons">local_dining</i></a></div>
+        <div class="icon-div"><a href="" id="icons"><i class="material-icons">beach_access</i></a></div>
+        <div class="icon-div"><a href="" id="icons"><i class="material-icons">search</i></a></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="container" id="gal-container">
+        <div class="row">
+          <div class="col s3">
+            <h4>Galería</h4>
+          </div>
+          <div class="input-field col s3 offset-s6">
+            <input id="search" type="text" class="validate">
+            <label for="search"><i class="material-icons">search</i>Buscar</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="gallery-col col s4">
+            <img src="./img/s1.jpg" class="gal-img" alt="" id="test">
+            <img src="./img/s10.jpg" class="gal-img" alt="">
+            <img src="./img/s3.jpg" class="gal-img" alt="">
+            <img src="./img/s4.jpg" alt="" class="gal-img">
+          </div>
+          <div class="gallery-col col s4">
+            <img src="./img/s11.jpg" class="gal-img" alt="">
+            <img src="./img/s7.jpg" class="gal-img" alt="">
+            <img src="./img/s8.jpg" class="gal-img" alt="">
+            <img src="./img/s2.jpg" class="gal-img" alt="">
+          </div>
+          <div class="gallery-col col s4">
+            <img src="./img/s12.jpg" class="gal-img" alt="">
+            <img src="./img/s5.jpg" class="gal-img" alt="">
+            <img src="./img/s6.jpg" class="gal-img" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!--JavaScript at end of body for optimized loading-->
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+  <script src="./js/mySlide.js"></script>
+  <script src="./js/modal.js"></script>
+</body>
+
+</html>
