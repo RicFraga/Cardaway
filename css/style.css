@@ -143,11 +143,11 @@
 }
 
 /* label focus color */
-.input-field input[type="text"]:focus + label {
+.input-field input:focus + label {
   color: #226fbb !important;
 }
 /* label underline focus color */
-.input-field input[type="text"]:focus {
+.input-field input:focus {
   border-bottom: 1px solid #226fbb !important;
 }
 
@@ -219,4 +219,24 @@
 @keyframes zoom {
   from {transform: scale(0.1)} 
   to {transform: scale(1)}
+}
+/*#########################################################FORM###############################################################*/
+.myForm{
+  width: 65%;
+}
+[type="radio"]:checked + span:after,
+ 
+[type="radio"].with-gap:checked + span:before,
+ 
+[type="radio"].with-gap:checked + span:after {
+ 
+  border: 2px solid #226fbb;
+ 
+} 
+[type="radio"]:checked + span:after,
+ 
+[type="radio"].with-gap:checked + span:after {
+ 
+  background-color: #226fbb;
+ 
 }
