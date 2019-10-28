@@ -1,0 +1,22 @@
+.sidenav .user-view {
+  background-color: #23374b;
+  display: flex;
+  padding: 10px;
+  align-content: center;
+  justify-content: center;
+}
+
+.sidenav .user-view .circle {
+  width: 100px;
+  height: 100px;
+}
+
+.testDiv {
+  width: 100%;
+  height: auto;
+  border: 3px solid black;
+}
+
+.sidenav.sidenav-fixed {
+  top: 64px;
+}
