@@ -245,3 +245,23 @@
   background-color: #226fbb;
  
 }
+
+.datepicker-date-display {
+  
+  background-color:#23374b!important;
+ 
+}
+.datepicker-cancel,
+.datepicker-clear,
+.datepicker-today,
+.datepicker-done {
+  color: #1089ff;
+
+}
+.datepicker-day-button:focus {
+  background-color:#226fbb;
+}
+.datepicker-table td.is-selected {
+  background-color: #226fbb;
+
+}
