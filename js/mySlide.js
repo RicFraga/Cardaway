@@ -1,4 +1,6 @@
-const mySlider = document.querySelector(".mySlider-slides");
+
+
+  const mySlider = document.querySelector(".mySlider-slides");
 const mySliderImg = document.querySelectorAll(".mySlider-slides img");
 
 const prevBtn = document.querySelector("#prevBtn");
@@ -39,4 +41,12 @@ mySlider.addEventListener("transitionend", () => {
     counter = mySliderImg.length - counter;
     mySlider.style.transform = "translateX(" + -size * counter + "px)";
   }
+
+
 });
+
+
+
+
+
+

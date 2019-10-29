@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link href="./icons/icons.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:700&display=swap" rel="stylesheet" />
+    <script src="./js/materialize.min.js"></script>
+    <script src ="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/formInit.js"></script>
+    <script src="./js/usuarios.js"></script>
     <title>Registro</title>
   </head>
   <body>
@@ -20,7 +24,7 @@
                 <li><a class="btn">Postales</a></li>
                 <li><a class="btn">Crear Postal</a></li>
                 <li id="nav-li"><a href="#">Iniciar Sesión</a></li>
-                <li id="nav-li"><a href="#">Crear Tu Cuenta</a></li>
+                <li id="nav-li"><a href="#"></a>Crea Tu Cuenta</a></li>
               </ul>
             </div>
           </nav>
@@ -29,21 +33,22 @@
     <div class="container myForm">
       <div class="row"></div>
       <div class="row">
-        <form class="col s12">
+
+        <form class="col s12" id ="formulario"> 
           <div class="row">
             <!-- Campo Nombre -->
             <div class="input-field col s12 l4">
-              <input id="nombre" type="text" class="validate" />
-              <label for="nombe">Nombre</label>
+              <input id="nombre" type="text" class="validate">
+              <label for="nombre">Nombre</label>
             </div>
             <!-- Campo Primer Apellido -->
             <div class="input-field col s12 l4">
-              <input id="primer_ap" type="text" class="validate" />
+              <input id="primer_ap" type="text" class="validate">
               <label for="primer_ap">Primer Apellido</label>
             </div>
             <!-- Campo Segundo Apellido -->
             <div class="input-field col s12 l4">
-              <input id="nombre" type="text" class="validate" />
+              <input id="apellido" type="text" class="validate">
               <label for="nombe">Segundo Apellido*</label>
               <span class="helper-text" data-error="wrong" data-success="right"
                 >Opcional*</span
@@ -59,7 +64,7 @@
             </div>
             <!-- Campo Correo -->
             <div class="input-field col s12 m6">
-              <input id="email" type="email" class="validate" />
+              <input id="correo" type="email" class="validate" />
               <label for="email">Correo</label>
             </div>
           </div>
@@ -110,7 +115,6 @@
       </div>
     </div>
   </main>
-    <script src="./js/materialize.min.js"></script>
-    <script src="./js/formInit.js"></script>
+  
   </body>
 </html>

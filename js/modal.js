@@ -1,4 +1,7 @@
-var modal=document.getElementsByClassName("myModal")[0];
+$(document).ready(function(){
+
+
+  var modal=document.getElementsByClassName("myModal")[0];
 var span=document.getElementById("close");
 
 var img = document.getElementsByClassName('gal-img');
@@ -26,3 +29,38 @@ document.addEventListener('click', function (event) {
 span.addEventListener("click",()=>{
   modal.style.display="none";
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+});
+
+

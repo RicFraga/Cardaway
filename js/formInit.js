@@ -1,3 +1,5 @@
+$(document).ready(function(){
+
 
   document.addEventListener('DOMContentLoaded', function() {
     espanol= {
@@ -63,3 +65,7 @@
     yearRange:[1969,2019],defaultDate:new Date("08/20/1999"), setDefaultDate:true});
    
   });
+
+
+
+});
