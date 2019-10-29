@@ -1,7 +1,6 @@
-$(document).ready(function(){
 
 
-  var modal=document.getElementsByClassName("myModal")[0];
+var modal=document.getElementsByClassName("myModal")[0];
 var span=document.getElementById("close");
 
 var img = document.getElementsByClassName('gal-img');
@@ -61,6 +60,6 @@ span.addEventListener("click",()=>{
 
 
 
-});
+
 
 

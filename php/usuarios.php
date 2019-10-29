@@ -2,15 +2,16 @@
 
 
 
-$nombre = $_POST["nombre"]
-$correo = $_POST["correo"];
+$nombre = $_POST["nombre"];
 
 $respAX = array();
 
-$respAX["usuario"] = $nombre;
-$respAX["email"] = $correo;
+$respAX["msj"] = $nombre;
 
 echo json_encode($respAX);
+
+
+
 
 
 

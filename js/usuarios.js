@@ -5,17 +5,22 @@ $(document).ready(function(){
         e.preventDefault();
 
         $.ajax({
-            method:"POST",
+
+            method: "POST",
             url:"./php/usuarios.php",
-            data:$("#formulario").serialize(),
-            cache:"false",
-
+            data: $("#formulario").serialize(),
+            cache:false,
             success:function(respAX){
-                var datos = JSON.parse(respAX);
-
-                alert(datos);
+                var AX = JSON.parse(respAX);
+                alert(AX.msj);
             }
-        })
+
+
+          });
+
+
+       
+
 
        
 
