@@ -22,8 +22,6 @@ document.addEventListener('click', function (event) {
 
 }, false);
 
-
-
 span.addEventListener("click",()=>{
   modal.style.display="none";
 })
