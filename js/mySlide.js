@@ -1,5 +1,4 @@
 
-
 const mySlider = document.querySelector(".mySlider-slides");
 const mySliderImg = document.querySelectorAll(".mySlider-slides img");
 

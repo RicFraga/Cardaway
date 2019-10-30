@@ -1,5 +1,4 @@
 
-
 var modal=document.getElementsByClassName("myModal")[0];
 var span=document.getElementById("close");
 
@@ -28,14 +27,6 @@ document.addEventListener('click', function (event) {
 span.addEventListener("click",()=>{
   modal.style.display="none";
 })
-
-
-
-
-
-
-
-
 
 
 

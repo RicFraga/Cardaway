@@ -12,7 +12,4 @@ echo json_encode($respAX);
 
 
 
-
-
-
 ?>
