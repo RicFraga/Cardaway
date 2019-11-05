@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="./css/materialize.min.css">
 
   <link href="./fonts/fonts.css" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/ed9493b41a.js" crossorigin="anonymous"></script>  
 
   <link rel="stylesheet" href="./css/style.css" />
 
@@ -19,6 +20,8 @@
 
   
   <script src ="./js/jquery-3.4.1.min.js"></script>
+  <script src = "./js/login.js"></script>
+ 
 
   
   <!--Con jquery $(document).ready no es necesario poner los js hasta abajo , execepto el 
@@ -30,6 +33,9 @@
 </head>
 
 <body>
+  
+
+  
 
   <header>
     <nav>
@@ -38,12 +44,49 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a class="btn" id ="postales">Postales</a></li>
           <li><a class="btn">Crear Postal</a></li>
-          <li id="nav-li"><a href="#">Iniciar Sesión</a></li>
+          <li id="nav-li"><a class ="waves-effect waves-light btn modal-trigger" href="#login">Iniciar Sesion</a></li>
           <li id="nav-li"><a href="Formulario.html"><button class="btn">Crea tu Cuenta</button></a></li>
         </ul>
       </div>
     </nav>
   </header>
+
+
+
+
+  <!--Login -->
+
+
+  <div class ="modal" id="login">
+
+      <div class="modal-content center">
+        <form id ="datos">
+
+          <div class="input-field">
+              <i class="fas fa-envelope prefix"></i>
+              <input type="text" id="usuario" name="usuario">
+              <label for="usuario">email</label>
+          </div>
+          
+          <div class="input-field">
+              <i class="fas fa-key prefix"></i>
+              <input type="password" id="contrasena" name="contrasena">
+              <label for="contrasena">contrasena</label>
+
+          </div>
+
+          <div class="enviar">
+
+            <button class="btn" type="submit">login</button>
+          
+          </div>
+
+
+
+        </form>
+      </div>
+      
+    </div>
 
   <main>
 
@@ -139,6 +182,19 @@
   <script src="./js/mySlide.js"></script>
   <script src="./js/modal.js"></script>
   
+  
 </body>
+
+<script>
+
+    $(document).ready(function(){
+  
+      $('.modal').modal();
+  
+    });
+  
+  </script>
+
+ 
 
 </html>

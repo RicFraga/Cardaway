@@ -2,8 +2,10 @@ $(document).ready(function(){
 
     $("#formulario").on("submit",function(e){
 
+
         e.preventDefault();
 
+        
         $.ajax({
 
             method: "POST",
@@ -11,8 +13,18 @@ $(document).ready(function(){
             data: $("#formulario").serialize(),
             cache:false,
             success:function(respAX){
+
                 var AX = JSON.parse(respAX);
-                alert(AX.msj);
+
+                if(AX.msj == 1){
+                    alert("Registro Exitoso!");
+                }
+                else{
+
+                    alert("Fallo en Registro : Usuario Existente!");
+                }
+
+                
             }
 
 
