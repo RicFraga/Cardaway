@@ -1,0 +1,125 @@
+create database web;
+use web;
+
+create table usuarios(id_usuario int unsigned not null unique,nombre varchar(32) not null,primer_apellido varchar(32)not null,segundo_apellido varchar(32),correo varchar(64) primary key, 
+fecha_nac date not null, genero boolean not null, contrasena varchar(32) not null);
+
+create table categorias(id_categoria  int unsigned not null primary key, nombre varchar(16) not null ); 
+ 
+create table postales(id_postal  int unsigned not null primary key ,id_categoria  int unsigned not null ,img varchar(32) not null,
+	foreign key(id_categoria) references categorias(id_categoria)
+);
+
+
+create table envios(id_postal  int unsigned not null ,id_remitente int unsigned not null,
+id_destinatario int unsigned not null ,dedicatoria varchar(256),fecha_hora timestamp not null,
+primary key(id_postal,id_remitente,id_destinatario,fecha_hora),
+foreign key(id_postal) references postales(id_postal),
+foreign key(id_destinatario) references usuarios(id_usuario),
+foreign key(id_remitente) references usuarios(id_usuario)
+ );
+
+
+
+
+
+
+insert into usuarios values (1,"Angel",  "Ramirez", "Ponce", "angelito_mix@gmail.com" , "1999-12-12" , True,"d8578edf8458ce06fbc5bb76a58c5ca4");
+insert into usuarios values (2,"Manuel",  "Jimenez", "Gimenez", "manuel_jimenez@gmail.com" , "2000-06-30" , True,"d8578edf8458ce06fbc5bb76a58c5ca4");
+insert into usuarios values (3,"Montiel",  "Navarro", "Cabrera", "monti_navmx@gmail.com" , "1985-09-23" , True,"d8578edf8458ce06fbc5bb76a58c5ca4");
+insert into usuarios values (4,"Alonso",  "Campos",null , "oso_carinoso64@gmail.com" , "1973-08-18" , True,"d8578edf8458ce06fbc5bb76a58c5ca4");
+insert into usuarios values (5,"Erick",  "Marquez","Garcia" , "NoobMaster69@gmail.com" , "2000-10-15" , True,"d8578edf8458ce06fbc5bb76a58c5ca4");
+insert into usuarios values (6,"David",  "Sierra","Soto" , "davis_solmayor@hotmail.com" , "1963-01-07" , True,"d8578edf8458ce06fbc5bb76a58c5ca4");
+insert into usuarios values (7,"Laura",  "Torres","Santos" , "laura.torres@hotmail.com" , "1978-02-14" , False,"d8578edf8458ce06fbc5bb76a58c5ca4");
+insert into usuarios values (8,"Daniela",  "Lozano","Campos" , "dany85@hotmail.com" , "1985-06-20" , False,"d8578edf8458ce06fbc5bb76a58c5ca4");
+insert into usuarios values (9,"Elsa",  "Mendez","Cortes" , "Elsa_Cortes@hotmail.com" , "1965-01-30" , False,"d8578edf8458ce06fbc5bb76a58c5ca4");
+insert into usuarios values (10,"Ines",  "Serrano","Medina" , "inesserrano@gmail.com" , "1978-05-26" , False,"d8578edf8458ce06fbc5bb76a58c5ca4");
+insert into usuarios values (11,"Carolina",  "Garcia","Gutierrez" , "carogg@hotmail.com" , "1999-03-25" , False,"d8578edf8458ce06fbc5bb76a58c5ca4");
+
+insert into categorias values (1,"Amor");
+insert into categorias values (2,"Fechas_fest");
+insert into categorias values (3,"Paisajes");
+insert into categorias values (4,"Comida");
+insert into categorias values (5,"Vintage");
+insert into categorias values (6,"Otros");
+
+insert into postales values(1,1,"gato_01.png");
+insert into postales values(2,1,"romecabezas_01.jpg");
+insert into postales values(3,1,"te_extrano.jpg");
+insert into postales values(4,2,"15_sep_01.jpg");
+insert into postales values(5,2,"15_sep_02.jpg");
+insert into postales values(6,2,"dia_muertos_01.gif");
+insert into postales values(7,2,"dia_muertos_02.png");
+insert into postales values(8,2,"ets_fest_2019.png");
+insert into postales values(9,2,"navidad.jpg");
+insert into postales values(10,3,"edificios_01.jpg");
+insert into postales values(11,3,"faro_01.jpg");
+insert into postales values(12,3,"lago_01.jpg");
+insert into postales values(13,3,"playa_01.jpg");
+insert into postales values(14,3,"puente_01.jpg");
+insert into postales values(15,3,"vias_01.jpg");
+insert into postales values(16,3,"vias_02.jpg");
+insert into postales values(17,4,"limones_01.jpg");
+insert into postales values(18,4,"pina_01.jpg");
+insert into postales values(19,4,"starbucks_01.jpg");
+insert into postales values(20,5,"calle_old_01.jpg");
+insert into postales values(21,5,"motoneta_01.jpg");
+insert into postales values(22,5,"patines_01.jpg");
+insert into postales values(23,5,"poker_01.jpg");
+insert into postales values(24,6,"el_bromas_01.jpg");
+insert into postales values(25,6,"girasol_01.jpg");
+
+insert into envios values(6,1,4,"Feliz Dia de Muertos Amiga :)","2019-11-01 15:30:00");
+insert into envios values(25,2,6,"Una flor para otra flor","2019-09-28 18:17:00");
+insert into envios values(9,4,8,"Feliz Navidad te deseo lo mejor","2019-12-23 23:50:30");
+insert into envios values(9,3,9,"Feliz Navidad amiga , hace mucho que no hablas","2019-12-22 16:55:31");
+insert into envios values(22,9,11,"Ya comprate unos para ir al centro","2019-06-12 20:43:39");
+insert into envios values(10,6,10,"Me gustaria vivri en uno de esos , a ti no?","2018-12-28 15:40:00");
+insert into envios values(21,4,5,"Camara sacate una a credito para ir a pistear","2019-04-20 12:45:14");
+insert into envios values(2,10,2,NULL,"2018-10-30 14:52:20");
+insert into envios values(24,3,5,"Que oferton xD","2019-05-21 13:32:15");
+insert into envios values(18,10,1,"Uff...,Pero mira como esta esa piña ","2019-06-29 18:23:49");
+insert into envios values(22,10,3,"Tu tenias unos no?,Los vendes?","2019-10-13 09:29:16");
+insert into envios values(4,5,1,"Viva MEXICO","2019-09-15 01:28:33");
+insert into envios values(9,3,10,"Feliz Navidad y prospero año nuevo","2019-12-24 22:18:34");
+insert into envios values(23,2,6,"Para cuando unas partidas","2019-11-01 15:30:00");
+insert into envios values(6,7,4,"Y si vamos a pedir calaverita?","2019-10-31 19:21:33");
+insert into envios values(3,7,11,NULL,"2019-11-01 15:30:00");
+insert into envios values(19,9,10,"Disparame un cafe amiga","2019-08-20 14:07:28");
+insert into envios values(17,6,4,"SI DIOS TE HA DADO LIMONES , HAZ LIMONADA","2019-01-24 09:48:32");
+insert into envios values(7,11,6,NULL,"2019-10-25 11:22:33");
+insert into envios values(20,1,2,"Solia vivir en una calle parecida","2019-05-29 12:21:55");
+insert into envios values(2,6,11,"Te amo Princesa, Feliz 14 de Febrero <3 ","2019-02-14 11:45:27");
+insert into envios values(13,6,11,"Ahmonos pa la playita","2019-03-22 20:23:08");
+insert into envios values(2,3,4,"No te lo habia dicho pero me encantas","2019-02-14 10:25:38");
+insert into envios values(18,1,6,"Traete unas piñas para los taquitos","2019-06-20 09:58:56");
+insert into envios values(25,7,3,"Imagen Random para tener una escusa de que hablar","2019-08-21 18:20:19");
+insert into envios values(21,4,3,"etoy vendiendo una motoneta parecida por ci te interesa compa","2019-11-01 15:30:00");
+insert into envios values(18,6,9,"Ahi amiga te desapareces,Se como una piña levantate derecha,Usa crorona y se dulce por dentro","2019-07-05 13:23:33");
+insert into envios values(12,10,11,"Esta postal me recuerda cuando ivamos al lago","2019-12-01 20:35:20");
+insert into envios values(5,11,10,NULL,"2019-09-16 04:17:32");
+insert into envios values(18,3,8,"Esta postal es muy hermosa :3, tenia que compartirla","2019-11-01 15:30:00");
+insert into envios values(20,1,4,"Me sentia nostalgico","2019-04-28 18:14:19");
+insert into envios values(20,9,2,"Yesterdays Gansos Rosas.jpg","2019-06-30 19:23:59");
+insert into envios values(12,3,2,"Vamonos pal laguito","2019-11-01 14:29:10");
+insert into envios values(9,9,4,NULL,"2019-12-23 23:59:59");
+insert into envios values(6,11,5,"OMG en esta pagina hay postales con extensiones gif","2019-10-20 12:48:45");
+insert into envios values(16,4,11,"Recuerdas cuando soliamos ir en ferry","2019-07-12 20:21:22");
+insert into envios values(25,6,11,"Que hermoso Girasol , es como hipnotico!!!","2019-02-22 21:00:39");
+insert into envios values(2,4,9,"Siempre he sido tu admirador secreto","2019-02-13 20:39:25");
+insert into envios values(10,3,11,"Ahora que ya no soy libre me encantaria poder ver ese paisaje","2019-02-21 21:36:09");
+insert into envios values(12,4,10,"Bosque , Lago y muchas nenas -niños del bosque 2k19","2019-03-02 10:17:43");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
