@@ -94,7 +94,7 @@ CREATE TABLE `postales` (
 
 LOCK TABLES `postales` WRITE;
 /*!40000 ALTER TABLE `postales` DISABLE KEYS */;
-INSERT INTO `postales` VALUES (1,1,'gato_01.png'),(2,1,'romecabezas_01.jpg'),(3,1,'te_extrano.jpg'),(4,2,'15_sep_01.jpg'),(5,2,'15_sep_02.jpg'),(6,2,'dia_muertos_01.gif'),(7,2,'dia_muertos_02.png'),(8,2,'ets_fest_2019.png'),(9,2,'navidad.jpg'),(10,3,'edificios_01.jpg'),(11,3,'faro_01.jpg'),(12,3,'lago_01.jpg'),(13,3,'playa_01.jpg'),(14,3,'puente_01.jpg'),(15,3,'vias_01.jpg'),(16,3,'vias_02.jpg'),(17,4,'limones_01.jpg'),(18,4,'pina_01.jpg'),(19,4,'starbucks_01.jpg'),(20,5,'calle_old_01.jpg'),(21,5,'motoneta_01.jpg'),(22,5,'patines_01.jpg'),(23,5,'poker_01.jpg'),(24,6,'el_bromas_01.jpg'),(25,6,'girasol_01.jpg');
+INSERT INTO `postales` VALUES (1,1,'gato_01.png'),(2,1,'rompecabezas_01.jpg'),(3,1,'te_extrano.jpg'),(4,2,'15_sep_01.jpg'),(5,2,'15_sep_02.jpg'),(6,2,'dia_muertos_01.gif'),(7,2,'dia_muertos_02.png'),(8,2,'ets_fest_2019.png'),(9,2,'navidad.jpg'),(10,3,'edificios_01.jpg'),(11,3,'faro_01.jpg'),(12,3,'lago_01.jpg'),(13,3,'playa_01.jpg'),(14,3,'puente_01.jpg'),(15,3,'vias_01.jpg'),(16,3,'vias_02.jpg'),(17,4,'limones_01.jpg'),(18,4,'pina_01.jpg'),(19,4,'starbucks_01.jpg'),(20,5,'calle_old_01.jpg'),(21,5,'motoneta_01.jpg'),(22,5,'patines_01.jpg'),(23,5,'poker_01.jpg'),(24,6,'el_bromas_01.jpg'),(25,6,'girasol_01.jpg');
 /*!40000 ALTER TABLE `postales` ENABLE KEYS */;
 UNLOCK TABLES;
 

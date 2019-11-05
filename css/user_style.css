@@ -14,9 +14,31 @@
 .testDiv {
   width: 100%;
   height: auto;
-  border: 3px solid black;
 }
 
 .sidenav.sidenav-fixed {
   top: 64px;
 }
+
+i{
+  color: #226fbb;
+  cursor: default;
+}
+
+.menu:hover{
+  background-color: #e2e2e2;
+}
+
+.tablink {
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 0px;
+}
+
+.tablink:hover,
+.tablink:focus{
+  background-color: #e2e2e2;
+}
+
