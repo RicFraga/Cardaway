@@ -13,6 +13,8 @@
 
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:700&display=swap" rel="stylesheet" />
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="stylesheet" href="./css/user_style.css">
   <script>
@@ -35,8 +37,7 @@
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a class="btn">Postales</a></li>
             <li><a class="btn">Crear Postal</a></li>
-            <li id="nav-li"><a href="#">Iniciar Sesión</a></li>
-            <li id="nav-li"><a href="#">Crear Tu Cuenta</a></li>
+            <li id="nav-li"><a href="#">Cerrar Sesión</a></li>
           </ul>
         </div>
       </nav>
@@ -52,54 +53,38 @@
               <a href="#user"><img class="circle" src="https://i.pravatar.cc/500"></a>
             </div>
           </li>
-          <li><a href="#!">Información General</a></li>
-          <li><a href="#!">Editar Información</a></li>
-          <li><a href="#!">Datos de Uso</a></li>
+          <button class="tablink">Tú Información</button>
+          <button class="tablink">Editar Información</button>
+          <button class="tablink">Información General</button>
         </ul>
         <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       </div>
 
       <div class="testDiv col s12 l9">
         <div class="row">
-          <form class="col s12">
-            <div class="row">
-              <div class="input-field col s6">
-                <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-                <label for="first_name">First Name</label>
-              </div>
-              <div class="input-field col s6">
-                <input id="last_name" type="text" class="validate">
-                <label for="last_name">Last Name</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-                <label for="disabled">Disabled</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <input id="password" type="password" class="validate">
-                <label for="password">Password</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <input id="email" type="email" class="validate">
-                <label for="email">Email</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col s12">
-                This is an inline input field:
-                <div class="input-field inline">
-                  <input id="email_inline" type="email" class="validate">
-                  <label for="email_inline">Email</label>
-                </div>
-              </div>
-            </div>
-          </form>
+          <div class="col s12">
+            <h4 id="user-complete">Nombre Completo</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s1 center-align">
+            <i class="material-icons">email</i>
+          </div>
+          <div class="col s5">
+            <p id="user-email">example@gmail.com</p>
+          </div>
+          <div class="col s1 center-align">
+            <i class="fa fa-venus-mars" style="font-size: 25px;"></i>
+          </div>
+          <div class="col s2">
+            <p id="user-gender">Gender</p>
+          </div>
+          <div class="col s1 center-align">
+            <i class="material-icons">cake</i>
+          </div>
+          <div class="col s2">
+            <p id="user-bday">XX/XX/XX</p>
+          </div>
         </div>
       </div>
     </div>
