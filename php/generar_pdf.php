@@ -8,8 +8,8 @@ class PDF extends FPDF
 	function Header()
 	{
 	    // Logo
-	    $this->Image('postal.jpg',10,6,30);
-	    $this->Image('comp.png',170,6,30);
+	    $this->Image('postal.jpg',20,15,30);
+	    $this->Image('comp.png',150,15,30);
 	    // Arial negrita 15
 	    $this->SetFont('Arial','B',15);
 	    // Move to the right
@@ -68,8 +68,58 @@ $pdf->Cell(10, 10, "", 0, 1, 'C', 0);
 
 // Categorías más gustadas
 
+// Hombres
 
-$pdf->Cell(10, 30, "", 0, 1, 'C', 0);
+$consulta = "
+	Select count(genero) tot
+	From usuarios
+	Where genero = '1'
+";
+
+$resultado = $mysqli->query($consulta);
+
+$pdf->SetFont('Arial','B',10);
+$pdf->SetXY(120, 39);
+$pdf->Cell(50, 10, utf8_decode("Cantidad de usuarios de género masculino"), 0, 1, 'C', 0);
+
+$x = 120;
+$y = 39;
+
+$pdf->SetFont('Arial','',10);
+while($row = $resultado->fetch_assoc()) {
+	$y = $y+10;
+	$pdf->SetXY($x, $y);
+	$pdf->Cell(50, 10, $row['tot'], 1, 0, 'C', 0);
+}
+
+$pdf->Cell(10, 10, "", 0, 1, 'C', 0);
+
+// Mujeres
+
+$consulta = "
+	Select count(genero) tot
+	From usuarios
+	Where genero = '0'
+";
+$y = $y + 15;
+$resultado = $mysqli->query($consulta);
+$pdf->SetXY($x, $y);
+$pdf->SetFont('Arial','B',10);
+
+$pdf->Cell(50, 10, utf8_decode("Cantidad de usuarios de género femenino"), 0, 1, 'C', 0);
+
+$pdf->SetXY($x, $y);
+$pdf->SetFont('Arial','',10);
+while($row = $resultado->fetch_assoc()) {
+	$y = $y+10;
+	$pdf->SetXY($x, $y);
+	$pdf->Cell(50, 10, $row['tot'], 1, 0, 'C', 0);
+}
+
+$pdf->Cell(10, 10, "", 0, 1, 'C', 0);
+
+
+
 
 
 
