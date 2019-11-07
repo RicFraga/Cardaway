@@ -47,7 +47,7 @@ $consulta = "
 	Where envios.id_postal = postales.id_postal
 	Group by img
 	Order by tot Desc
-	Limit 5
+	Limit 8
 ";
 
 $resultado = $mysqli->query($consulta);
@@ -74,8 +74,7 @@ $consulta = "
 	From envios env, categorias cat, postales post
 	Where cat.id_categoria = post.id_categoria and post.id_postal=env.id_postal
 	Group by cat.nombre
-	Order by tot Desc
-	Limit 5
+	Order by tot Desc	
 	;
 ";
 
@@ -168,10 +167,52 @@ while($row = $resultado->fetch_assoc()) {
 	$pdf->Cell(50, 10, $edad, 1, 0, 'C', 0);
 }
 
-$pdf->AddPage();
+$pdf->AddPage('L');
 
 $pdf->Cell(10, 10, "", 0, 1, 'C', 0);
 
+// Cantidad de postales enviadas
+
+$consulta = "
+	Select count(dedicatoria) tot
+	From envios
+";
+
+
+$resultado = $mysqli->query($consulta);
+$pdf->SetFont('Arial','B',10);
+$pdf->Cell(50, 10, utf8_decode("Cantidad de postales enviadas"), 0, 1, 'C', 0);
+
+$pdf->SetFont('Arial','',10);
+while($row = $resultado->fetch_assoc()) {		
+	$pdf->Cell(50, 10, $row['tot'], 1, 1, 'C', 0);
+}
+
+// Detalles de los envios
+
+$consulta = "
+	Select *
+	From envios
+	Order by fecha_hora Desc
+";
+
+
+$resultado = $mysqli->query($consulta);
+$pdf->SetFont('Arial','B',10);
+$pdf->Cell(20, 10, utf8_decode("postal"), 0, 0, 'C', 0);
+$pdf->Cell(20, 10, utf8_decode("remitente"), 0, 0, 'C', 0);
+$pdf->Cell(20, 10, utf8_decode("destinatario"), 0, 0, 'C', 0);
+$pdf->Cell(180, 10, utf8_decode("Dedicatoria"), 0, 0, 'C', 0);
+$pdf->Cell(40, 10, utf8_decode("Fecha"), 0, 1, 'C', 0);
+
+$pdf->SetFont('Arial','',10);
+while($row = $resultado->fetch_assoc()) {		
+	$pdf->Cell(20, 10, $row['id_postal'], 1, 0, 'C', 0);
+	$pdf->Cell(20, 10, $row['id_remitente'], 1, 0, 'C', 0);
+	$pdf->Cell(20, 10, $row['id_destinatario'], 1, 0, 'C', 0);
+	$pdf->Cell(180, 10, $row['dedicatoria'], 1, 0, 'C', 0);
+	$pdf->Cell(40, 10, $row['fecha_hora'], 1, 1, 'C', 0);
+}
 
 $pdf->Output();
 
