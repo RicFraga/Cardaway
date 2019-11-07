@@ -54,6 +54,7 @@ $resultado = $mysqli->query($consulta);
 
 $pdf->Cell(10, 10, "", 0, 1, 'C', 0);
 
+$pdf->SetX(30);
 $pdf->Cell(50, 10, utf8_decode("Postales más gustadas"), 0, 1, 'C', 0);
 $pdf->Cell(50, 10, "Nombre", 1, 0, 'C', 0);
 $pdf->Cell(30, 10, utf8_decode("Envíos"), 1, 1, 'C', 0);
@@ -101,6 +102,7 @@ $consulta = "
 	From usuarios
 	Where genero = '0'
 ";
+
 $y = $y + 15;
 $resultado = $mysqli->query($consulta);
 $pdf->SetXY($x, $y);
@@ -118,10 +120,60 @@ while($row = $resultado->fetch_assoc()) {
 
 $pdf->Cell(10, 10, "", 0, 1, 'C', 0);
 
+// Edad de los usuarios
+$consulta = "
+	Select fecha_nac
+	From usuarios
+";
+
+$y = $y + 15;
+$resultado = $mysqli->query($consulta);
+$pdf->SetXY($x, $y);
+$pdf->SetFont('Arial','B',10);
+
+$pdf->Cell(50, 10, utf8_decode("Edades de los usuarios"), 0, 1, 'C', 0);
+
+$pdf->SetXY($x, $y);
+$pdf->SetFont('Arial','',10);
+while($row = $resultado->fetch_assoc()) {
+	$y = $y+10;
+	$pdf->SetXY($x, $y);
+	$edad = busca_edad($row['fecha_nac']);
+	$pdf->Cell(50, 10, $edad, 1, 0, 'C', 0);
+}
+
+$pdf->Cell(10, 10, "", 0, 1, 'C', 0);
 
 
 
+function busca_edad($fecha_nacimiento){
+$dia=date("d");
+$mes=date("m");
+$ano=date("Y");
 
+
+$dianaz=date("d",strtotime($fecha_nacimiento));
+$mesnaz=date("m",strtotime($fecha_nacimiento));
+$anonaz=date("Y",strtotime($fecha_nacimiento));
+
+
+//si el mes es el mismo pero el día inferior aun no ha cumplido años, le quitaremos un año al actual
+
+if (($mesnaz == $mes) && ($dianaz > $dia)) {
+$ano=($ano-1); }
+
+//si el mes es superior al actual tampoco habrá cumplido años, por eso le quitamos un año al actual
+
+if ($mesnaz > $mes) {
+$ano=($ano-1);}
+
+ //ya no habría mas condiciones, ahora simplemente restamos los años y mostramos el resultado como su edad
+
+$edad=($ano-$anonaz);
+
+
+return $edad;
+}
 
 $pdf->Output();
 ?>
