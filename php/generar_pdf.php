@@ -69,6 +69,31 @@ $pdf->Cell(10, 10, "", 0, 1, 'C', 0);
 
 // Categorías más gustadas
 
+$consulta = "
+	Select cat.nombre nom, count(cat.nombre) tot
+	From envios env, categorias cat, postales post
+	Where cat.id_categoria = post.id_categoria and post.id_postal=env.id_postal
+	Group by cat.nombre
+	Order by tot Desc
+	Limit 5
+	;
+";
+
+
+$resultado = $mysqli->query($consulta);
+$pdf->SetFont('Arial','B',10);
+
+$pdf->SetX(30);
+$pdf->Cell(50, 10, utf8_decode("Categorias más gustadas"), 0, 1, 'C', 0);
+$pdf->Cell(50, 10, "Nombre", 1, 0, 'C', 0);
+$pdf->Cell(30, 10, utf8_decode("Envíos"), 1, 1, 'C', 0);
+
+$pdf->SetFont('Arial','',10);
+while($row = $resultado->fetch_assoc()) {
+	$pdf->Cell(50, 10, $row['nom'], 1, 0, 'C', 0);
+	$pdf->Cell(30, 10, $row['tot'], 1, 1, 'C', 0);
+}
+
 // Hombres
 
 $consulta = "
@@ -121,6 +146,7 @@ while($row = $resultado->fetch_assoc()) {
 $pdf->Cell(10, 10, "", 0, 1, 'C', 0);
 
 // Edad de los usuarios
+
 $consulta = "
 	Select fecha_nac
 	From usuarios
@@ -142,38 +168,40 @@ while($row = $resultado->fetch_assoc()) {
 	$pdf->Cell(50, 10, $edad, 1, 0, 'C', 0);
 }
 
+$pdf->AddPage();
+
 $pdf->Cell(10, 10, "", 0, 1, 'C', 0);
 
 
+$pdf->Output();
+
 
 function busca_edad($fecha_nacimiento){
-$dia=date("d");
-$mes=date("m");
-$ano=date("Y");
+	$dia=date("d");
+	$mes=date("m");
+	$ano=date("Y");
 
 
-$dianaz=date("d",strtotime($fecha_nacimiento));
-$mesnaz=date("m",strtotime($fecha_nacimiento));
-$anonaz=date("Y",strtotime($fecha_nacimiento));
+	$dianaz=date("d",strtotime($fecha_nacimiento));
+	$mesnaz=date("m",strtotime($fecha_nacimiento));
+	$anonaz=date("Y",strtotime($fecha_nacimiento));
 
 
-//si el mes es el mismo pero el día inferior aun no ha cumplido años, le quitaremos un año al actual
+	//si el mes es el mismo pero el día inferior aun no ha cumplido años, le quitaremos un año al actual
 
-if (($mesnaz == $mes) && ($dianaz > $dia)) {
-$ano=($ano-1); }
+	if (($mesnaz == $mes) && ($dianaz > $dia)) {
+		$ano=($ano-1); }
 
-//si el mes es superior al actual tampoco habrá cumplido años, por eso le quitamos un año al actual
+	//si el mes es superior al actual tampoco habrá cumplido años, por eso le quitamos un año al actual
 
-if ($mesnaz > $mes) {
-$ano=($ano-1);}
+		if ($mesnaz > $mes) {
+			$ano=($ano-1);}
 
- //ya no habría mas condiciones, ahora simplemente restamos los años y mostramos el resultado como su edad
+	 	//ya no habría mas condiciones, ahora simplemente restamos los años y mostramos el resultado como su edad
 
-$edad=($ano-$anonaz);
+		$edad=($ano-$anonaz);
 
 
-return $edad;
-}
-
-$pdf->Output();
+		return $edad;
+	}
 ?>
