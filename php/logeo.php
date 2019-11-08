@@ -4,7 +4,7 @@ include("conexion.php");
 
 
 $correo = $_POST["usuario"];
-$contrasena = $_POST["contrasena"];
+$contrasena = md5($_POST["contrasena"]);
 
 
 $respAX = array();

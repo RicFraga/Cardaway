@@ -1,6 +1,6 @@
 <?php
-require 'fpdf/fpdf.php';
-require 'cn.php';
+require "./../fpdf/fpdf.php";
+require './cn.php';
 
 class PDF extends FPDF
 {
@@ -8,8 +8,8 @@ class PDF extends FPDF
 	function Header()
 	{
 	    // Logo
-	    $this->Image('postal.jpg',20,15,30);
-	    $this->Image('comp.png',150,15,30);
+	    $this->Image('./../images/postal.jpg',20,15,30);
+	    $this->Image('./../images/comp.png',150,15,30);
 	    // Arial negrita 15
 	    $this->SetFont('Arial','B',15);
 	    // Move to the right

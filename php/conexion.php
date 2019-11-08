@@ -18,13 +18,15 @@
     }
 
     
-    //echo validarExistencia("Angel","Ramirez","Ponce",$conexion);
+    //echo validarExistencia("ehecatzin96@hotmail.com",$conexion);
 
-    //echo validarLogeo("felipe96@hotmail.com","1234",$conexion);
+    //$contrasena = md5("qwerty");
+
+    //echo validarLogeo("angelito_mix@gmail.com",$contrasena,$conexion);
 
     function validarLogeo($correo,$contrasena,$conexion){
 
-        $sql = "SELECT * FROM usuarios WHERE  correo = '$correo'";
+        $sql = "SELECT * FROM usuarios WHERE  correo = '$correo' AND contrasena = '$contrasena'";
         $respuesta = mysqli_query($conexion,$sql);
 
         $longitug = mysqli_num_rows($respuesta);
@@ -47,9 +49,9 @@
     }
 
 
-    function validarExistencia($nombre,$primer_ap,$segundo_ap,$conexion){
+    function validarExistencia($correo,$conexion){
 
-        $sql = "SELECT * FROM usuarios WHERE nombre like '$nombre' AND primer_apellido like '%$primer_ap' OR segundo_apellido like '%$segundo_ap'" ;
+        $sql = "SELECT * FROM usuarios WHERE correo  = '$correo'";
         $respuesta = mysqli_query($conexion, $sql);
     
         $longitug = mysqli_num_rows($respuesta);
