@@ -39,6 +39,9 @@ $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Arial','B',10);
 
+$x = 120;
+$y = 39;
+
 // Postales más gustadas
 
 $consulta = "
@@ -107,9 +110,6 @@ $pdf->SetFont('Arial','B',10);
 $pdf->SetXY(120, 39);
 $pdf->Cell(50, 10, utf8_decode("Cantidad de usuarios de género masculino"), 0, 1, 'C', 0);
 
-$x = 120;
-$y = 39;
-
 $pdf->SetFont('Arial','',10);
 while($row = $resultado->fetch_assoc()) {
 	$y = $y+10;
@@ -167,55 +167,74 @@ while($row = $resultado->fetch_assoc()) {
 	$pdf->Cell(50, 10, $edad, 1, 0, 'C', 0);
 }
 
-$pdf->AddPage('L');
-
-$pdf->Cell(10, 10, "", 0, 1, 'C', 0);
-
 // Cantidad de postales enviadas
+
+$x = 30;
+$y = $y + 40;
 
 $consulta = "
 	Select count(dedicatoria) tot
 	From envios
 ";
 
-
+$pdf->SetXY($x, $y);
 $resultado = $mysqli->query($consulta);
 $pdf->SetFont('Arial','B',10);
 $pdf->Cell(50, 10, utf8_decode("Cantidad de postales enviadas"), 0, 1, 'C', 0);
+$y = $y + 10;
 
 $pdf->SetFont('Arial','',10);
-while($row = $resultado->fetch_assoc()) {		
+while($row = $resultado->fetch_assoc()) {
+	$pdf->SetXY($x, $y);
 	$pdf->Cell(50, 10, $row['tot'], 1, 1, 'C', 0);
 }
+
+$pdf->AddPage();
+
+$pdf->Cell(10, 10, "", 0, 1, 'C', 0);
 
 // Detalles de los envios
 
 $consulta = "
-	Select *
+	Select id_postal, id_remitente, id_destinatario, fecha_hora
 	From envios
 	Order by fecha_hora Desc
 ";
 
+$x = 55;
+$y = 40;
+$pdf->SetXy($x, $y);
 
 $resultado = $mysqli->query($consulta);
 $pdf->SetFont('Arial','B',10);
-$pdf->Cell(20, 10, utf8_decode("postal"), 0, 0, 'C', 0);
-$pdf->Cell(20, 10, utf8_decode("remitente"), 0, 0, 'C', 0);
-$pdf->Cell(20, 10, utf8_decode("destinatario"), 0, 0, 'C', 0);
-$pdf->Cell(180, 10, utf8_decode("Dedicatoria"), 0, 0, 'C', 0);
+$pdf->Cell(20, 10, utf8_decode("Postal"), 0, 0, 'C', 0);
+$pdf->Cell(20, 10, utf8_decode("Remitente"), 0, 0, 'C', 0);
+$pdf->Cell(20, 10, utf8_decode("Destinatario"), 0, 0, 'C', 0);
 $pdf->Cell(40, 10, utf8_decode("Fecha"), 0, 1, 'C', 0);
 
 $pdf->SetFont('Arial','',10);
-while($row = $resultado->fetch_assoc()) {		
+$x = 55;
+$y = 50;
+$pdf->SetXy($x, $y);
+
+$cant = 0;
+while($row = $resultado->fetch_assoc()) {	
 	$pdf->Cell(20, 10, $row['id_postal'], 1, 0, 'C', 0);
 	$pdf->Cell(20, 10, $row['id_remitente'], 1, 0, 'C', 0);
 	$pdf->Cell(20, 10, $row['id_destinatario'], 1, 0, 'C', 0);
-	$pdf->Cell(180, 10, $row['dedicatoria'], 1, 0, 'C', 0);
 	$pdf->Cell(40, 10, $row['fecha_hora'], 1, 1, 'C', 0);
+	$pdf->SetX($x);
+
+	$cant = $cant + 1;
+
+	if($cant % 22 == 0)
+	{
+		$pdf->Cell(10, 10, "", 0, 1, 'C', 0);
+		$pdf->SetX($x);
+	}
 }
 
 $pdf->Output();
-
 
 function busca_edad($fecha_nacimiento){
 	$dia=date("d");
@@ -241,7 +260,6 @@ function busca_edad($fecha_nacimiento){
 	 	//ya no habría mas condiciones, ahora simplemente restamos los años y mostramos el resultado como su edad
 
 		$edad=($ano-$anonaz);
-
 
 		return $edad;
 	}
