@@ -48,9 +48,12 @@ $consulta = "
 	Select img, count(envios.id_postal) tot
 	From envios, postales
 	Where envios.id_postal = postales.id_postal
+	And fecha_hora >= curdate() - INTERVAL DAYOFWEEK(curdate())+6 DAY
+	And fecha_hora < curdate() - INTERVAL DAYOFWEEK(curdate())-1 DAY
 	Group by img
 	Order by tot Desc
 	Limit 8
+
 ";
 
 $resultado = $mysqli->query($consulta);
@@ -76,6 +79,8 @@ $consulta = "
 	Select cat.nombre nom, count(cat.nombre) tot
 	From envios env, categorias cat, postales post
 	Where cat.id_categoria = post.id_categoria and post.id_postal=env.id_postal
+	And fecha_hora >= curdate() - INTERVAL DAYOFWEEK(curdate())+6 DAY
+	And fecha_hora < curdate() - INTERVAL DAYOFWEEK(curdate())-1 DAY
 	Group by cat.nombre
 	Order by tot Desc	
 	;
@@ -175,6 +180,8 @@ $y = $y + 40;
 $consulta = "
 	Select count(dedicatoria) tot
 	From envios
+	Where fecha_hora >= curdate() - INTERVAL DAYOFWEEK(curdate())+6 DAY
+	And fecha_hora < curdate() - INTERVAL DAYOFWEEK(curdate())-1 DAY
 ";
 
 $pdf->SetXY($x, $y);
@@ -198,6 +205,8 @@ $pdf->Cell(10, 10, "", 0, 1, 'C', 0);
 $consulta = "
 	Select id_postal, id_remitente, id_destinatario, fecha_hora
 	From envios
+	Where fecha_hora >= curdate() - INTERVAL DAYOFWEEK(curdate())+6 DAY
+	And fecha_hora < curdate() - INTERVAL DAYOFWEEK(curdate())-1 DAY	
 	Order by fecha_hora Desc
 ";
 
@@ -241,11 +250,9 @@ function busca_edad($fecha_nacimiento){
 	$mes=date("m");
 	$ano=date("Y");
 
-
 	$dianaz=date("d",strtotime($fecha_nacimiento));
 	$mesnaz=date("m",strtotime($fecha_nacimiento));
 	$anonaz=date("Y",strtotime($fecha_nacimiento));
-
 
 	//si el mes es el mismo pero el día inferior aun no ha cumplido años, le quitaremos un año al actual
 
