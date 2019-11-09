@@ -1,6 +1,9 @@
+
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
+  
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -14,7 +17,18 @@
     <script src ="./js/jquery-3.4.1.js"></script>
     <script src="./js/formInit.js"></script>
     <script src="./js/usuarios.js"></script>
-    
+      <!--cosas para que funciine sweetAlert-->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js"></script>
+<!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+  <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+
+    <!--VALIDETTA-->
+    <link href="./validetta/validetta.css" rel="stylesheet" type="text/css" media="screen">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="validetta/validetta.js"></script>
+    <script type="text/javascript" src="validetta/validettaLang-es-ES.js"></script>
+   
     <title>Registro</title>
   </head>
   <body>
@@ -41,17 +55,17 @@
             <!-- Campo Nombre -->
             <div class="input-field col s12 l4">
                 <i class="fas fa-user-circle prefix"></i>
-              <input id="nombre" type="text" class="validate" name="nombre">
+              <input id="nombre" type="text"  name="nombre"  data-validetta="required" data-validetta="maxLength[10]">
               <label for="nombre">Nombre</label>
             </div>
             <!-- Campo Primer Apellido -->
             <div class="input-field col s12 l4">
-              <input id="primer_ap" type="text" class="validate" name = "primer_ap">
+              <input id="primer_ap" type="text" class="validate" name = "primer_ap" data-validetta="required" data-validetta="maxLength[10]">
               <label for="primer_ap">Primer Apellido</label>
             </div>
             <!-- Campo Segundo Apellido -->
             <div class="input-field col s12 l4">
-              <input id="segundo_ap" type="text" class="validate" name="segundo_ap">
+              <input id="segundo_ap" type="text" class="validate" name="segundo_ap"  data-validetta="required" data-validetta="maxLength[10]">
               <label for="nombe">Segundo Apellido*</label>
               <span class="helper-text" data-error="wrong" data-success="right"
                 >Opcional*</span
@@ -63,13 +77,13 @@
             <!-- Campo Contrasena -->
             <div class="input-field col s12 m6">
                 <i class="fas fa-key prefix"></i>
-              <input id="password" type="password" class="validate" name="contrasena"/>
+              <input id="password" type="password" class="validate" name="contrasena" data-validetta="required"/>
               <label for="password">Contraseña</label>
             </div>
             <!-- Campo Correo -->
             <div class="input-field col s12 m6">
                 <i class="fas fa-at prefix"></i>
-              <input id="correo" type="email" class="validate" name="correo"/>
+              <input type ="text" id="correo"  name="correo" data-validetta="email"/>
               <label for="email">Correo</label>
             </div>
           </div>

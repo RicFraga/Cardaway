@@ -1,15 +1,14 @@
+
 $(document).ready(function(){
-    
-   
 
-    $("#datos").on("submit",function(e){
+    $("#datos").validetta({
+        display:'bubble',
+        bubblePosition: 'bottom',
+        realTime: false,
+        onValid:function(e){
 
-    
-
-        e.preventDefault();
-
-
-        $.ajax({
+            e.preventDefault();
+            $.ajax({
 
             method:"POST",
             url:"./php/logeo.php",
@@ -19,24 +18,42 @@ $(document).ready(function(){
 
                 var AX = JSON.parse(respAX);
 
-               
+                if(AX.resp != 0){
 
-                if(AX.resp == 0){
-                    alert("Usuario no existente!");
+                    Swal.fire(
+                        'Bienvenido!',
+                         AX.resp,
+                        'success'
+                        
+                      ).then(function(){
+
+                        window.location.replace("./php/user.php");
+                
+
+                      })
                 }
+
                 else{
 
-                    alert("Bienvenido"+AX.resp);
+                    Swal.fire(
+                        'Cardaway',
+                        'Usuario o contraseña incorrectos',
+                        'warning'
+                    )
+
                 }
+
+                  
+              
             }
+
+          
         })
-
-     
-     
-
+            
+        }
+    
     });
 
-
-
-
+   
+     
 });

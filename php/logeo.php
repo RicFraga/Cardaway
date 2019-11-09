@@ -1,6 +1,7 @@
 <?php
-
+session_start();
 include("conexion.php");
+
 
 
 $correo = $_POST["usuario"];
@@ -17,15 +18,16 @@ if($result == "Error"){
 
     $respAX["resp"] = 0;
     echo json_encode($respAX);
+    
+    
 }
 
 else{
 
     $respAX["resp"] = $result;
+    $_SESSION['usuario'] = $correo;
     echo json_encode($respAX);
 }
-
-
 
 
 ?>

@@ -2,9 +2,6 @@
 
 include("conexion.php");
 
-
-
-
 $nombre =$_POST["nombre"];
 $primer_ap = $_POST["primer_ap"];
 $segundo_ap = $_POST["segundo_ap"];
@@ -32,8 +29,6 @@ else{
     echo json_encode($respAX);
 
 }
-
-
 
 
 function parser($cadena){

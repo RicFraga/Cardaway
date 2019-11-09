@@ -20,12 +20,34 @@
 
   
   <script src ="./js/jquery-3.4.1.min.js"></script>
-  <script src = "./js/login.js"></script>
- 
-
   
+   <!--cosas para que funciine sweetAlert-->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js"></script>
+<!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+  <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+
+   <!--VALIDETTA-->
+   <link href="./validetta/validetta.css" rel="stylesheet" type="text/css" media="screen">
+   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+   <script type="text/javascript" src="validetta/validetta.js"></script>
+   <script type="text/javascript" src="validetta/validettaLang-es-ES.js"></script>
+  
+ 
   <!--Con jquery $(document).ready no es necesario poner los js hasta abajo , execepto el 
   archivo myslide.js-->
+
+  <script src="./js/materialize.min.js"></script>
+  <script src="./js/login.js"></script>
+  <script>
+
+    $(document).ready(function(){
+  
+      $('.modal').modal();
+
+    });
+  
+  </script>
 
   
 
@@ -64,13 +86,13 @@
 
           <div class="input-field">
               <i class="fas fa-envelope prefix"></i>
-              <input type="text" id="usuario" name="usuario">
+              <input type="text" id="usuario" name="usuario" data-validetta="email" data-validetta="required">
               <label for="usuario">email</label>
           </div>
           
           <div class="input-field">
               <i class="fas fa-key prefix"></i>
-              <input type="password" id="contrasena" name="contrasena">
+              <input type="password" id="contrasena" name="contrasena" data-validetta="required">
               <label for="contrasena">contrasena</label>
 
           </div>
@@ -178,22 +200,14 @@
 
   <!--JavaScript at end of body for optimized loading-->
   <!-- Compiled and minified JavaScript -->
-  <script src="./js/materialize.min.js"></script>
+  
   <script src="./js/mySlide.js"></script>
   <script src="./js/modal.js"></script>
   
   
 </body>
 
-<script>
 
-    $(document).ready(function(){
-  
-      $('.modal').modal();
-  
-    });
-  
-  </script>
 
  
 
