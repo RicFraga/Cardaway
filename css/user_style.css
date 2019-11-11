@@ -11,7 +11,7 @@
   height: 100px;
 }
 
-.testDiv {
+.tabContent {
   width: 100%;
   height: auto;
 }
@@ -37,8 +37,15 @@ i{
   border: 0px;
 }
 
+.selected{
+  background-color: #d4d4d4;
+}
+
 .tablink:hover,
 .tablink:focus{
   background-color: #e2e2e2;
 }
 
+.thumbnail{
+  width: 100px;
+}
