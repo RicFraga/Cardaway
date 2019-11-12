@@ -121,7 +121,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Angel','Ramirez','Ponce','angelito_mix@gmail.com','1999-12-12',1,'d8578edf8458ce06fbc5bb76a58c5ca4'),(2,'Manuel','Jimenez','Gimenez','manuel_jimenez@gmail.com','2000-06-30',1,'d8578edf8458ce06fbc5bb76a58c5ca4'),(3,'Montiel','Navarro','Cabrera','monti_navmx@gmail.com','1985-09-23',1,'d8578edf8458ce06fbc5bb76a58c5ca4'),(4,'Alonso','Campos',NULL,'oso_carinoso64@gmail.com','1973-08-18',1,'d8578edf8458ce06fbc5bb76a58c5ca4'),(5,'Erick','Marquez','Garcia','NoobMaster69@gmail.com','2000-10-15',1,'d8578edf8458ce06fbc5bb76a58c5ca4'),(6,'David','Sierra','Soto','davis_solmayor@hotmail.com','1963-01-07',1,'d8578edf8458ce06fbc5bb76a58c5ca4'),(7,'Laura','Torres','Santos','laura.torres@hotmail.com','1978-02-14',0,'d8578edf8458ce06fbc5bb76a58c5ca4'),(8,'Daniela','Lozano','Campos','dany85@hotmail.com','1985-06-20',0,'d8578edf8458ce06fbc5bb76a58c5ca4'),(9,'Elsa','Mendez','Cortes','Elsa_Cortes@hotmail.com','1965-01-30',0,'d8578edf8458ce06fbc5bb76a58c5ca4'),(10,'Ines','Serrano','Medina','inesserrano@gmail.com','1978-05-26',0,'d8578edf8458ce06fbc5bb76a58c5ca4'),(11,'Carolina','Garcia','Gutierrez','carogg@hotmail.com','1999-03-25',0,'d8578edf8458ce06fbc5bb76a58c5ca4');
+INSERT INTO `usuarios` VALUES (1,'Angel','Ramirez','Ponce','angelito_mix@gmail.com','1999-12-12',1,'d8578edf8458ce06fbc5bb76a58c5ca4'),(2,'Manuel','Jimenez','Gimenez','manuel_jimenez@gmail.com','2000-06-30',1,'d8578edf8458ce06fbc5bb76a58c5ca4'),(3,'Montiel','Navarro','Cabrera','monti_navmx@gmail.com','1985-09-23',1,'d8578edf8458ce06fbc5bb76a58c5ca4'),(4,'Alonso','Campos',NULL,'oso_carinoso64@gmail.com','1973-08-18',1,'d8578edf8458ce06fbc5bb76a58c5ca4'),(5,'Erick','Marquez','Garcia','NoobMaster69@gmail.com','2000-10-15',1,'d8578edf8458ce06fbc5bb76a58c5ca4'),(6,'David','Sierra','Soto','davis_solmayor@hotmail.com','1963-01-07',1,'d8578edf8458ce06fbc5bb76a58c5ca4'),(7,'Laura','Torres','Santos','laura.torres@hotmail.com','1978-02-14',0,'d8578edf8458ce06fbc5bb76a58c5ca4'),(8,'Daniela','Lozano','Campos','dany85@hotmail.com','1985-06-20',0,'d8578edf8458ce06fbc5bb76a58c5ca4'),(9,'Elsa','Mendez','Cortes','Elsa_Cortes@hotmail.com','1965-01-30',0,'d8578edf8458ce06fbc5bb76a58c5ca4'),(10,'Ines','Serrano','Medina','inesserrano@gmail.com','1988-05-26',0,'d8578edf8458ce06fbc5bb76a58c5ca4'),(11,'Carolina','Garcia','Gutierrez','carogg@hotmail.com','1999-03-25',0,'d8578edf8458ce06fbc5bb76a58c5ca4');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -134,4 +134,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-11 22:40:12
+-- Dump completed on 2019-11-12  0:55:14

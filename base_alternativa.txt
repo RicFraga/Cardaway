@@ -33,7 +33,7 @@ insert into usuarios values (NULL,"David",  "Sierra","Soto" , "davis_solmayor@ho
 insert into usuarios values (NULL,"Laura",  "Torres","Santos" , "laura.torres@hotmail.com" , "1978-02-14" , False,"d8578edf8458ce06fbc5bb76a58c5ca4");
 insert into usuarios values (NULL,"Daniela",  "Lozano","Campos" , "dany85@hotmail.com" , "1985-06-20" , False,"d8578edf8458ce06fbc5bb76a58c5ca4");
 insert into usuarios values (NULL,"Elsa",  "Mendez","Cortes" , "Elsa_Cortes@hotmail.com" , "1965-01-30" , False,"d8578edf8458ce06fbc5bb76a58c5ca4");
-insert into usuarios values (NULL,"Ines",  "Serrano","Medina" , "inesserrano@gmail.com" , "1978-05-26" , False,"d8578edf8458ce06fbc5bb76a58c5ca4");
+insert into usuarios values (NULL,"Ines",  "Serrano","Medina" , "inesserrano@gmail.com" , "1988-05-26" , False,"d8578edf8458ce06fbc5bb76a58c5ca4");
 insert into usuarios values (NULL,"Carolina",  "Garcia","Gutierrez" , "carogg@hotmail.com" , "1999-03-25" , False,"d8578edf8458ce06fbc5bb76a58c5ca4");
 
 insert into categorias values (NULL,"Amor");
