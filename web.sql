@@ -23,10 +23,10 @@ DROP TABLE IF EXISTS `categorias`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `categorias` (
-  `id_categoria` int(10) unsigned NOT NULL,
+  `id_categoria` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nombre` varchar(16) NOT NULL,
   PRIMARY KEY (`id_categoria`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -76,12 +76,12 @@ DROP TABLE IF EXISTS `postales`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `postales` (
-  `id_postal` int(10) unsigned NOT NULL,
+  `id_postal` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `id_categoria` int(10) unsigned NOT NULL,
   `img` varchar(32) NOT NULL,
   PRIMARY KEY (`id_postal`),
   KEY `id_categoria` (`id_categoria`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -90,7 +90,7 @@ CREATE TABLE `postales` (
 
 LOCK TABLES `postales` WRITE;
 /*!40000 ALTER TABLE `postales` DISABLE KEYS */;
-INSERT INTO `postales` VALUES (1,1,'gato_01.png'),(2,1,'romecabezas_01.jpg'),(3,1,'te_extrano.jpg'),(4,2,'15_sep_01.jpg'),(5,2,'15_sep_02.jpg'),(6,2,'dia_muertos_01.gif'),(7,2,'dia_muertos_02.png'),(8,2,'ets_fest_2019.png'),(9,2,'navidad.jpg'),(10,3,'edificios_01.jpg'),(11,3,'faro_01.jpg'),(12,3,'lago_01.jpg'),(13,3,'playa_01.jpg'),(14,3,'puente_01.jpg'),(15,3,'vias_01.jpg'),(16,3,'vias_02.jpg'),(17,4,'limones_01.jpg'),(18,4,'pina_01.jpg'),(19,4,'starbucks_01.jpg'),(20,5,'calle_old_01.jpg'),(21,5,'motoneta_01.jpg'),(22,5,'patines_01.jpg'),(23,5,'poker_01.jpg'),(24,6,'el_bromas_01.jpg'),(25,6,'girasol_01.jpg');
+INSERT INTO `postales` VALUES (1,1,'gato_01.png'),(2,1,'rompecabezas_01.jpg'),(3,1,'te_extrano_01.jpg'),(4,2,'15_sep_01.jpg'),(5,2,'15_sep_02.jpg'),(6,2,'dia_muertos_01.gif'),(7,2,'dia_muertos_02.png'),(8,2,'ets_fest_2019_01.png'),(9,2,'navidad_01.jpg'),(10,3,'edificios_01.jpg'),(11,3,'faro_01.jpg'),(12,3,'lago_01.jpg'),(13,3,'playa_01.jpg'),(14,3,'puente_01.jpg'),(15,3,'vias_01.jpg'),(16,3,'vias_02.jpg'),(17,4,'limones_01.jpg'),(18,4,'pina_01.jpg'),(19,4,'starbucks_01.jpg'),(20,5,'calle_old_01.jpg'),(21,5,'motoneta_01.jpg'),(22,5,'patines_01.jpg'),(23,5,'poker_01.jpg'),(24,6,'el_bromas_01.jpg'),(25,6,'girasol_01.jpg');
 /*!40000 ALTER TABLE `postales` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -102,7 +102,7 @@ DROP TABLE IF EXISTS `usuarios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `usuarios` (
-  `id_usuario` int(10) unsigned NOT NULL,
+  `id_usuario` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nombre` varchar(32) NOT NULL,
   `primer_apellido` varchar(32) NOT NULL,
   `segundo_apellido` varchar(32) DEFAULT NULL,
@@ -112,7 +112,7 @@ CREATE TABLE `usuarios` (
   `contrasena` varchar(32) NOT NULL,
   PRIMARY KEY (`correo`),
   UNIQUE KEY `id_usuario` (`id_usuario`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -134,4 +134,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-07 17:21:50
+-- Dump completed on 2019-11-11 22:40:12

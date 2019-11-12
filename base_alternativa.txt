@@ -1,12 +1,12 @@
 create database web;
 use web;
 
-create table usuarios(id_usuario int unsigned not null unique,nombre varchar(32) not null,primer_apellido varchar(32)not null,segundo_apellido varchar(32),correo varchar(64) primary key, 
+create table usuarios(id_usuario int unsigned not null unique auto_increment,nombre varchar(32) not null,primer_apellido varchar(32)not null,segundo_apellido varchar(32),correo varchar(64) primary key, 
 fecha_nac date not null, genero boolean not null, contrasena varchar(32) not null);
 
-create table categorias(id_categoria  int unsigned not null primary key, nombre varchar(16) not null ); 
+create table categorias(id_categoria  int unsigned not null auto_increment primary key, nombre varchar(16) not null ); 
  
-create table postales(id_postal  int unsigned not null primary key ,id_categoria  int unsigned not null ,img varchar(32) not null,
+create table postales(id_postal  int unsigned not null primary key auto_increment,id_categoria  int unsigned not null ,img varchar(32) not null,
 	foreign key(id_categoria) references categorias(id_categoria)
 );
 
@@ -24,50 +24,50 @@ foreign key(id_remitente) references usuarios(id_usuario)
 
 
 
-insert into usuarios values (1,"Angel",  "Ramirez", "Ponce", "angelito_mix@gmail.com" , "1999-12-12" , True,"d8578edf8458ce06fbc5bb76a58c5ca4");
-insert into usuarios values (2,"Manuel",  "Jimenez", "Gimenez", "manuel_jimenez@gmail.com" , "2000-06-30" , True,"d8578edf8458ce06fbc5bb76a58c5ca4");
-insert into usuarios values (3,"Montiel",  "Navarro", "Cabrera", "monti_navmx@gmail.com" , "1985-09-23" , True,"d8578edf8458ce06fbc5bb76a58c5ca4");
-insert into usuarios values (4,"Alonso",  "Campos",null , "oso_carinoso64@gmail.com" , "1973-08-18" , True,"d8578edf8458ce06fbc5bb76a58c5ca4");
-insert into usuarios values (5,"Erick",  "Marquez","Garcia" , "NoobMaster69@gmail.com" , "2000-10-15" , True,"d8578edf8458ce06fbc5bb76a58c5ca4");
-insert into usuarios values (6,"David",  "Sierra","Soto" , "davis_solmayor@hotmail.com" , "1963-01-07" , True,"d8578edf8458ce06fbc5bb76a58c5ca4");
-insert into usuarios values (7,"Laura",  "Torres","Santos" , "laura.torres@hotmail.com" , "1978-02-14" , False,"d8578edf8458ce06fbc5bb76a58c5ca4");
-insert into usuarios values (8,"Daniela",  "Lozano","Campos" , "dany85@hotmail.com" , "1985-06-20" , False,"d8578edf8458ce06fbc5bb76a58c5ca4");
-insert into usuarios values (9,"Elsa",  "Mendez","Cortes" , "Elsa_Cortes@hotmail.com" , "1965-01-30" , False,"d8578edf8458ce06fbc5bb76a58c5ca4");
-insert into usuarios values (10,"Ines",  "Serrano","Medina" , "inesserrano@gmail.com" , "1978-05-26" , False,"d8578edf8458ce06fbc5bb76a58c5ca4");
-insert into usuarios values (11,"Carolina",  "Garcia","Gutierrez" , "carogg@hotmail.com" , "1999-03-25" , False,"d8578edf8458ce06fbc5bb76a58c5ca4");
+insert into usuarios values (NULL,"Angel",  "Ramirez", "Ponce", "angelito_mix@gmail.com" , "1999-12-12" , True,"d8578edf8458ce06fbc5bb76a58c5ca4");
+insert into usuarios values (NULL,"Manuel",  "Jimenez", "Gimenez", "manuel_jimenez@gmail.com" , "2000-06-30" , True,"d8578edf8458ce06fbc5bb76a58c5ca4");
+insert into usuarios values (NULL,"Montiel",  "Navarro", "Cabrera", "monti_navmx@gmail.com" , "1985-09-23" , True,"d8578edf8458ce06fbc5bb76a58c5ca4");
+insert into usuarios values (NULL,"Alonso",  "Campos",null , "oso_carinoso64@gmail.com" , "1973-08-18" , True,"d8578edf8458ce06fbc5bb76a58c5ca4");
+insert into usuarios values (NULL,"Erick",  "Marquez","Garcia" , "NoobMaster69@gmail.com" , "2000-10-15" , True,"d8578edf8458ce06fbc5bb76a58c5ca4");
+insert into usuarios values (NULL,"David",  "Sierra","Soto" , "davis_solmayor@hotmail.com" , "1963-01-07" , True,"d8578edf8458ce06fbc5bb76a58c5ca4");
+insert into usuarios values (NULL,"Laura",  "Torres","Santos" , "laura.torres@hotmail.com" , "1978-02-14" , False,"d8578edf8458ce06fbc5bb76a58c5ca4");
+insert into usuarios values (NULL,"Daniela",  "Lozano","Campos" , "dany85@hotmail.com" , "1985-06-20" , False,"d8578edf8458ce06fbc5bb76a58c5ca4");
+insert into usuarios values (NULL,"Elsa",  "Mendez","Cortes" , "Elsa_Cortes@hotmail.com" , "1965-01-30" , False,"d8578edf8458ce06fbc5bb76a58c5ca4");
+insert into usuarios values (NULL,"Ines",  "Serrano","Medina" , "inesserrano@gmail.com" , "1978-05-26" , False,"d8578edf8458ce06fbc5bb76a58c5ca4");
+insert into usuarios values (NULL,"Carolina",  "Garcia","Gutierrez" , "carogg@hotmail.com" , "1999-03-25" , False,"d8578edf8458ce06fbc5bb76a58c5ca4");
 
-insert into categorias values (1,"Amor");
-insert into categorias values (2,"Fechas_fest");
-insert into categorias values (3,"Paisajes");
-insert into categorias values (4,"Comida");
-insert into categorias values (5,"Vintage");
-insert into categorias values (6,"Otros");
+insert into categorias values (NULL,"Amor");
+insert into categorias values (NULL,"Fechas_fest");
+insert into categorias values (NULL,"Paisajes");
+insert into categorias values (NULL,"Comida");
+insert into categorias values (NULL,"Vintage");
+insert into categorias values (NULL,"Otros");
 
-insert into postales values(1,1,"gato_01.png");
-insert into postales values(2,1,"romecabezas_01.jpg");
-insert into postales values(3,1,"te_extrano.jpg");
-insert into postales values(4,2,"15_sep_01.jpg");
-insert into postales values(5,2,"15_sep_02.jpg");
-insert into postales values(6,2,"dia_muertos_01.gif");
-insert into postales values(7,2,"dia_muertos_02.png");
-insert into postales values(8,2,"ets_fest_2019.png");
-insert into postales values(9,2,"navidad.jpg");
-insert into postales values(10,3,"edificios_01.jpg");
-insert into postales values(11,3,"faro_01.jpg");
-insert into postales values(12,3,"lago_01.jpg");
-insert into postales values(13,3,"playa_01.jpg");
-insert into postales values(14,3,"puente_01.jpg");
-insert into postales values(15,3,"vias_01.jpg");
-insert into postales values(16,3,"vias_02.jpg");
-insert into postales values(17,4,"limones_01.jpg");
-insert into postales values(18,4,"pina_01.jpg");
-insert into postales values(19,4,"starbucks_01.jpg");
-insert into postales values(20,5,"calle_old_01.jpg");
-insert into postales values(21,5,"motoneta_01.jpg");
-insert into postales values(22,5,"patines_01.jpg");
-insert into postales values(23,5,"poker_01.jpg");
-insert into postales values(24,6,"el_bromas_01.jpg");
-insert into postales values(25,6,"girasol_01.jpg");
+insert into postales values(NULL,1,"gato_01.png");
+insert into postales values(NULL,1,"rompecabezas_01.jpg");
+insert into postales values(NULL,1,"te_extrano_01.jpg");
+insert into postales values(NULL,2,"15_sep_01.jpg");
+insert into postales values(NULL,2,"15_sep_02.jpg");
+insert into postales values(NULL,2,"dia_muertos_01.gif");
+insert into postales values(NULL,2,"dia_muertos_02.png");
+insert into postales values(NULL,2,"ets_fest_2019_01.png");
+insert into postales values(NULL,2,"navidad_01.jpg");
+insert into postales values(NULL,3,"edificios_01.jpg");
+insert into postales values(NULL,3,"faro_01.jpg");
+insert into postales values(NULL,3,"lago_01.jpg");
+insert into postales values(NULL,3,"playa_01.jpg");
+insert into postales values(NULL,3,"puente_01.jpg");
+insert into postales values(NULL,3,"vias_01.jpg");
+insert into postales values(NULL,3,"vias_02.jpg");
+insert into postales values(NULL,4,"limones_01.jpg");
+insert into postales values(NULL,4,"pina_01.jpg");
+insert into postales values(NULL,4,"starbucks_01.jpg");
+insert into postales values(NULL,5,"calle_old_01.jpg");
+insert into postales values(NULL,5,"motoneta_01.jpg");
+insert into postales values(NULL,5,"patines_01.jpg");
+insert into postales values(NULL,5,"poker_01.jpg");
+insert into postales values(NULL,6,"el_bromas_01.jpg");
+insert into postales values(NULL,6,"girasol_01.jpg");
 
 insert into envios values(6,1,4,"Feliz Dia de Muertos Amiga :)","2019-11-01 15:30:00");
 insert into envios values(25,2,6,"Una flor para otra flor","2019-09-28 18:17:00");
