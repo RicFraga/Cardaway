@@ -1,5 +1,5 @@
 <?php
-require "./../../fpdf/fpdf.php";
+require "./../../fpdf/fpdf.php";//Si te causa problema esta linea avisame, att:Hadad Bautista 
 require './cn.php';
 
 class PDF extends FPDF
@@ -15,7 +15,7 @@ class PDF extends FPDF
 	    // Move to the right
 	    $this->Cell(80);
 	    // Title
-	    $this->Cell(30,18,'Reporte de postales',0,0,'C');
+	    $this->Cell(30,18,'Reporte de postales de la Semana',0,0,'C');
 	    // Line break
 	    $this->Ln(20);
 	}
@@ -53,7 +53,6 @@ $consulta = "
 	Group by img
 	Order by tot Desc
 	Limit 8
-
 ";
 
 $resultado = $mysqli->query($consulta);
@@ -83,9 +82,7 @@ $consulta = "
 	And fecha_hora < curdate() - INTERVAL DAYOFWEEK(curdate())-1 DAY
 	Group by cat.nombre
 	Order by tot Desc	
-	;
 ";
-
 
 $resultado = $mysqli->query($consulta);
 $pdf->SetFont('Arial','B',10);

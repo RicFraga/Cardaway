@@ -2,7 +2,7 @@
 
     $sevidor = "localhost";
     $usuarioBD = "root";
-    $contrasenaBD = "";
+    $contrasenaBD = "";//Movi esta linea para que todos tengamos la misma base att:Hadad Bautista
     $nombreBD = "web";
     $conexion = mysqli_connect($sevidor,$usuarioBD,$contrasenaBD,$nombreBD);
 
