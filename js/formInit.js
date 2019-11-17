@@ -59,6 +59,6 @@
       }
     var elems = document.querySelectorAll('.datepicker');
     var instances = M.Datepicker.init(elems, {i18n:espanol,format:"dddd d , mmmm  yyyy",
-    yearRange:[1969,2019],defaultDate:new Date("08/20/1999"), setDefaultDate:true});
+    yearRange:[1969,2019], setDefaultDate:true,defaultDate:new Date()});
    
   });

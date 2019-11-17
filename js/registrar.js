@@ -1,4 +1,9 @@
 $(document).ready(function(){
+    const myswal = Swal.mixin({
+        onClose: () => {
+            location.href ="./../../";
+        }
+      })
     
     $("#formulario").validetta({
         display:'bubble',
@@ -9,15 +14,14 @@ $(document).ready(function(){
             $.ajax({
 
                 method: "POST",
-                url:"./php/usuarios.php",
+                url:"./../functions/registrar.php",
                 data: $("#formulario").serialize(),
                 cache:false,
                 success:function(respAX){
-    
                     var AX = JSON.parse(respAX);
-    
+                    
                     if(AX.msj == 1){
-                        Swal.fire(
+                        myswal.fire(
                             'Cardaway!',
                              'Bienvenido a nuestra comunidad',
                             'success'

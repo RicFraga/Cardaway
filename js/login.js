@@ -11,7 +11,7 @@ $(document).ready(function(){
             $.ajax({
 
             method:"POST",
-            url:"./php/logeo.php",
+            url:"./php/functions/login.php",
             data: $("#datos").serialize(),
             cache:false,
             success:function(respAX){
@@ -27,7 +27,7 @@ $(document).ready(function(){
                         
                       ).then(function(){
 
-                        window.location.replace("./php/user.php");
+                        window.location.replace("./php/pages/user_page.php");
                 
 
                       })

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -7,16 +6,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./css/materialize.min.css" />
+    <link rel="stylesheet" href="./../../css/materialize.min.css" />
 
-    <link rel="stylesheet" href="./css/style.css" />
-    <link href="./icons/icons.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./../../css/style.css" />
+    <link href="./../../icons/icons.css" rel="stylesheet" />
+    <link href="./../../fonts/fonts.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/ed9493b41a.js" crossorigin="anonymous"></script>  
-    <script src="./js/materialize.min.js"></script>
-    <script src ="./js/jquery-3.4.1.js"></script>
-    <script src="./js/formInit.js"></script>
-    <script src="./js/usuarios.js"></script>
+    <script src="./../../js/materialize.min.js"></script>
+    <script src ="./../../js/jquery-3.4.1.js"></script>
+    <script src="./../../js/formInit.js"></script>
+    <script src="./../../js/registrar.js"></script>
       <!--cosas para que funciine sweetAlert-->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js"></script>
@@ -24,10 +23,9 @@
   <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
 
     <!--VALIDETTA-->
-    <link href="./validetta/validetta.css" rel="stylesheet" type="text/css" media="screen">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script type="text/javascript" src="validetta/validetta.js"></script>
-    <script type="text/javascript" src="validetta/validettaLang-es-ES.js"></script>
+    <link href="./../../validetta/validetta.css" rel="stylesheet" type="text/css" media="screen">
+    <script type="text/javascript" src="./../../validetta/validetta.js"></script>
+    <script type="text/javascript" src="./../../validetta/validettaLang-es-ES.js"></script>
    
     <title>Registro</title>
   </head>
@@ -35,12 +33,12 @@
       <header>
           <nav>
             <div class="nav-wrapper">
-              <a href="inicio.html" class="brand-logo">CARDAWAY</a>
+              <a href="./../../inicio.php" class="brand-logo">CARDAWAY</a>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a class="btn">Postales</a></li>
                 <li><a class="btn">Crear Postal</a></li>
                 <li id="nav-li"><a href="#">Iniciar Sesión</a></li>
-                <li id="nav-li"><a href="#"></a>Crea Tu Cuenta</a></li>
+                <li id="nav-li"><a href="#">Crea Tu Cuenta</a></li>
               </ul>
             </div>
           </nav>
@@ -48,7 +46,7 @@
         <main>
     <div class="container myForm">
       <div class="row"></div>
-      <div class="row">
+      <div class="row"></div>
 
         <form class="col s12" id ="formulario"> 
           <div class="row">
@@ -60,30 +58,27 @@
             </div>
             <!-- Campo Primer Apellido -->
             <div class="input-field col s12 l4">
-              <input id="primer_ap" type="text" class="validate" name = "primer_ap" data-validetta="required" data-validetta="maxLength[10]">
+              <input id="primer_ap" type="text" name = "primer_ap" data-validetta="required" data-validetta="maxLength[10]">
               <label for="primer_ap">Primer Apellido</label>
             </div>
             <!-- Campo Segundo Apellido -->
             <div class="input-field col s12 l4">
-              <input id="segundo_ap" type="text" class="validate" name="segundo_ap"  data-validetta="required" data-validetta="maxLength[10]">
+              <input id="segundo_ap" type="text"  name="segundo_ap">
               <label for="nombe">Segundo Apellido*</label>
-              <span class="helper-text" data-error="wrong" data-success="right"
-                >Opcional*</span
-              >
+              <span class="helper-text" >Opcional*</span>
             </div>
           </div>
-
           <div class="row">
             <!-- Campo Contrasena -->
             <div class="input-field col s12 m6">
-                <i class="fas fa-key prefix"></i>
-              <input id="password" type="password" class="validate" name="contrasena" data-validetta="required"/>
+              <i class="fas fa-key prefix"></i>
+              <input id="password" type="password"  name="contrasena" data-validetta="required"/>
               <label for="password">Contraseña</label>
             </div>
             <!-- Campo Correo -->
             <div class="input-field col s12 m6">
-                <i class="fas fa-at prefix"></i>
-              <input type ="text" id="correo"  name="correo" data-validetta="email"/>
+              <i class="fas fa-at prefix"></i>
+              <input type ="email" id="correo"  name="correo" data-validetta="email"/>
               <label for="email">Correo</label>
             </div>
           </div>
@@ -118,7 +113,6 @@
               </div>
               <div class="row"></div>
               <div class="row"></div>
-              <div class="row ">
                 <!-- Boton de Envio -->
                 <div class="col s12 center">
                   <button

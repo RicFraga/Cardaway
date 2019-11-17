@@ -1,23 +1,29 @@
+<?php
+session_start();
+if(!isset($_SESSION["usuario"])){
+        header("location:./../../inicio.html");
+    }
+    ?>
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en"> 
 <head>
-
+  <script src="./../../js/jquery-3.4.1.min.js"></script>
+  <script src="./../../js/user_page.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!--Import Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="./../../icons/icons.css" rel="stylesheet" />
   <!--Import materialize.css-->
   <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="./../../css/materialize.min.css">
 
-  <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:700&display=swap" rel="stylesheet" />
+  <link href="./../../fonts/fonts.css" rel="stylesheet" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./css/user_style.css">
+  <link rel="stylesheet" href="./../../css/style.css" />
+  <link rel="stylesheet" href="./../../css/user_style.css">
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var elems = document.querySelectorAll('.sidenav');
@@ -90,42 +96,53 @@
         </div>
       </div>
       <div class="tabContent col s12 l9" id="editInfo">
+        <div class="myForm2">
         <div class="row">
           <form class="col s12">
             <div class="row">
               <div class="input-field col s4">
-                <input placeholder="NombreUsuario" id="nombre" type="text" class="validate">
+                <input placeholder="NombreUsuario" id="nombre" type="text" >
                 <label for="nombre">Nombre</label>
               </div>
               <div class="input-field col s4">
-                <input placeholder="ApellidoPatUsuario" id="apellidoPat" type="text" class="validate">
-                <label for="apellidoPat">Apellido Paterno</label>
+                <input placeholder="ApellidoPatUsuario" id="primer_ap" type="text" >
+                <label for="primer_ap">Primer Apellido</label>
               </div>
               <div class="input-field col s4">
-                <input placeholder="ApellidoMatUsuario" id="apellidoMat" type="text" class="validate">
-                <label for="apellidoMat">Apellido Materno</label>
+                <input placeholder="ApellidoMatUsuario" id="segundo_ap" type="text" >
+                <label for="segundo_ap">Segundo Apellido</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s6">
-                <input placeholder="example@gmail.com" id="email" type="email" class="validate">
+                <input placeholder="example@gmail.com" id="email" type="email"  >
                 <label for="email">Email</label>
               </div>
-              <div class="input-field col s4">
-                <input placeholder="Género" id="genero" type="text" class="validate">
-                <label for="genero">Género</label>
+              <div class="col s6">
+              <div class="row">
+                Genero
               </div>
+              <div class="col s6">
+                <label>
+                  <input class="with-gap" name="group1" type="radio" value = "1" />
+                  <span>Hombre</span>
+                </label>
+              </div>
+              <div class="col s6">
+                <label>
+                  <input class="with-gap" name="group1" type="radio" value = "0"/>
+                  <span>Mujer</span>
+                </label>
+              </div>
+            </div>
             </div>
             <div class="row">
               <div class="input-field col s6">
-                <input placeholder="*********" id="password" type="password" class="validate">
+                <input placeholder="*********" id="password" type="password">
                 <label for="password">Contraseña</label>
               </div>
-              <div class="input-field col s6">
-                <input placeholder="*********" id="confPassword" type="password" class="validate">
-                <label for="confPassword">Confirmar Contraseña</label>
-              </div>
-              <div class="file-field input-field col l6 s12">
+            
+              <div class="file-field input-field col  s6">
                 <div class="btn">
                   <span>Cambiar Foto</span>
                   <input type="file">
@@ -134,10 +151,17 @@
                   <input class="file-path validate" type="text">
                 </div>
               </div>
+              <div class="col s12">
+                  <div class="row center">
+                  Fecha de Nacimiento
+                  <input type="text" class="datepicker" name="date" value="Lunes 24 de Noviembre"/>
+                </div>
+                </div>
             </div>
             <button type="submit" class="btn">Guardar Cambios</button>
           </form>
         </div>
+      </div>
       </div>
       <div class="tabContent col s12 l9" id="sent">
         <table class="highlight">
@@ -151,17 +175,17 @@
 
           <tbody>
             <tr>
-              <td><img src="./postales/Comida/limones_01.jpg" class="thumbnail"></td>
+              <td><img src="./../../postales/Comida/limones_01.jpg" class="thumbnail"></td>
               <td>example@gmail.com</td>
               <td>XX/XX/XXXX</td>
             </tr>
             <tr>
-              <td><img src="./postales/Comida/pina_01.jpg" alt="" class="thumbnail"></td>
+              <td><img src="./../../postales/Comida/pina_01.jpg" alt="" class="thumbnail"></td>
               <td>example@gmail.com</td>
               <td>XX/XX/XXXX</td>
             </tr>
             <tr>
-              <td><img src="./postales/Paisajes/faro_01.jpg" alt="" class="thumbnail"></td>
+              <td><img src="./../../postales/Paisajes/faro_01.jpg" alt="" class="thumbnail"></td>
               <td>example@gmail.com</td>
               <td>XX/XX/XXXX</td>
             </tr>
@@ -177,30 +201,29 @@
               <th>Fecha</th>
             </tr>
           </thead>
-
           <tbody>
             <tr>
-              <td><img src="./postales/Comida/starbucks_01.jpg" class="thumbnail"></td>
+              <td><img src="./../../postales/Comida/starbucks_01.jpg" class="thumbnail"></td>
               <td>example@gmail.com</td>
               <td>XX/XX/XXXX</td>
             </tr>
             <tr>
-              <td><img src="./postales/Otros/el_bromas_01.jpg" alt="" class="thumbnail"></td>
+              <td><img src="./../../postales/Otros/el_bromas_01.jpg" alt="" class="thumbnail"></td>
               <td>example@gmail.com</td>
               <td>XX/XX/XXXX</td>
             </tr>
             <tr>
-              <td><img src="./postales/Fechas_fest/navidad.jpg" alt="" class="thumbnail"></td>
+              <td><img src="./../../postales/Fechas_fest/navidad_01.jpg" alt="" class="thumbnail"></td>
               <td>example@gmail.com</td>
               <td>XX/XX/XXXX</td>
             </tr>
             <tr>
-              <td><img src="./postales/Fechas_fest/navidad.jpg" alt="" class="thumbnail"></td>
+              <td><img src="./../../postales/Fechas_fest/navidad_01.jpg" alt="" class="thumbnail"></td>
               <td>example@gmail.com</td>
               <td>XX/XX/XXXX</td>
             </tr>
             <tr>
-              <td><img src="./postales/Fechas_fest/navidad.jpg" alt="" class="thumbnail"></td>
+              <td><img src="./../../postales/Fechas_fest/navidad_01.jpg" alt="" class="thumbnail"></td>
               <td>example@gmail.com</td>
               <td>XX/XX/XXXX</td>
             </tr>
@@ -212,8 +235,12 @@
 
   <!--JavaScript at end of body for optimized loading-->
   <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="./js/tabs.js"></script>
+  <script src="./../../js/materialize.min.js"></script>
+  <script src="./../../js/tabs.js"></script>
+  <script src="./../../js/formInit.js"></script>
+
+  
+ 
 </body>
 
 </html>

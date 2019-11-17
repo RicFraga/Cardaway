@@ -1,8 +1,8 @@
 <?php
 
-    $sevidor = "127.0.0.1";
+    $sevidor = "localhost";
     $usuarioBD = "root";
-    $contrasenaBD = "root";
+    $contrasenaBD = "";
     $nombreBD = "web";
     $conexion = mysqli_connect($sevidor,$usuarioBD,$contrasenaBD,$nombreBD);
 
@@ -35,7 +35,7 @@
 
             $informarcion = mysqli_fetch_row($respuesta);
 
-            return $informarcion[0];
+            return $informarcion[1];
 
         }
 
@@ -72,11 +72,11 @@
     function registrarUsuario($nombre,$primer_ap,$segundo_ap,$correo,$fechaNa,$genero,$contrasena,$conexion){
 
        //preparamos la instruccion sql
-        $stmt = mysqli_prepare($conexion,"INSERT INTO usuarios VALUES(?,?,?,?,?,?,?)");
+        $stmt = mysqli_prepare($conexion,"INSERT INTO usuarios VALUES(?,?,?,?,?,?,?,?)");
 
         //asociamos variables a parametros de consulta
-
-        mysqli_stmt_bind_param($stmt,'sssssds',$nombre,$primer_ap,$segundo_ap,$correo,$fechaNa,$genero,$contrasena);
+        $id=null;
+        mysqli_stmt_bind_param($stmt,'dsssssds',$id,$nombre,$primer_ap,$segundo_ap,$correo,$fechaNa,$genero,$contrasena);
         //ejecuatmos consulta
 
         mysqli_stmt_execute($stmt);

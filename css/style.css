@@ -229,6 +229,9 @@
 .myForm{
   width: 65%;
 }
+.myForm2{
+  width: 95%;
+}
 [type="radio"]:checked + span:after,
  
 [type="radio"].with-gap:checked + span:before,

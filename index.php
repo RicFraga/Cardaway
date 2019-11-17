@@ -29,7 +29,6 @@
 
    <!--VALIDETTA-->
    <link href="./validetta/validetta.css" rel="stylesheet" type="text/css" media="screen">
-   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
    <script type="text/javascript" src="validetta/validetta.js"></script>
    <script type="text/javascript" src="validetta/validettaLang-es-ES.js"></script>
   
@@ -67,7 +66,7 @@
           <li><a class="btn" id ="postales">Postales</a></li>
           <li><a class="btn">Crear Postal</a></li>
           <li id="nav-li"><a class ="waves-effect waves-light btn modal-trigger" href="#login">Iniciar Sesion</a></li>
-          <li id="nav-li"><a href="Formulario.html"><button class="btn">Crea tu Cuenta</button></a></li>
+          <li id="nav-li"><a href="./php/pages/formulario.php"><button class="btn">Crea tu Cuenta</button></a></li>
         </ul>
       </div>
     </nav>
