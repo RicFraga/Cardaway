@@ -61,8 +61,36 @@ $(document).ready(function(){
               });     
         }
     });
+//setInterval(actualiza_postales, 5000); 
+actualiza_postales();
+        
 
 });
+function actualiza_postales(){
+    $.ajax({
+        url:"./../functions/actual_postales.php",
+        cache:false,
+        success:function(respAX){
+            //alert(respAX);
+            var AX = JSON.parse(respAX);
+            AX.enviadas.forEach(element => {
+                    $("#enviadas")[0].insertRow(-1).innerHTML = `<td><img 
+                    src="`+element.postal +`" class="thumbnail"></td>
+                    <td>`+element.destinatario+`</td>
+                    <td>`+element.fecha +`</td>'`;
+            });
+            AX.recibidas.forEach(element => {
+                $("#recibidas")[0].insertRow(-1).innerHTML = `<td><img 
+                src="`+element.postal +`" class="thumbnail"></td>
+                <td>`+element.remitente+`</td>
+                <td>`+element.fecha +`</td>'`;
+        });
+            
+        }
+        
+      });
+      
+    }
 
 
 

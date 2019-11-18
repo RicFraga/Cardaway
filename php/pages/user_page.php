@@ -59,11 +59,11 @@ if(!isset($_SESSION["usuario"])){
     <div class="row navbar-fixed">
       <nav>
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo">CARDAWAY</a>
+          <a href="./../../" class="brand-logo">CARDAWAY</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a class="btn">Postales</a></li>
             <li><a class="btn">Crear Postal</a></li>
-            <li id="nav-li"><a href="#">Cerrar Sesión</a></li>
+            <li id="nav-li"><a href="./../functions/cerrar_session.php">Cerrar Sesión</a></li>
           </ul>
         </div>
       </nav>
@@ -212,7 +212,7 @@ if(!isset($_SESSION["usuario"])){
       </div>
       </div>
       <div class="tabContent col s12 l9" id="sent">
-        <table class="highlight">
+        <table class="highlight" id="enviadas">
           <thead>
             <tr>
               <th>Postal</th>
@@ -220,28 +220,12 @@ if(!isset($_SESSION["usuario"])){
               <th>Fecha</th>
             </tr>
           </thead>
-
           <tbody>
-            <tr>
-              <td><img src="./../../postales/Comida/limones_01.jpg" class="thumbnail"></td>
-              <td>example@gmail.com</td>
-              <td>XX/XX/XXXX</td>
-            </tr>
-            <tr>
-              <td><img src="./../../postales/Comida/pina_01.jpg" alt="" class="thumbnail"></td>
-              <td>example@gmail.com</td>
-              <td>XX/XX/XXXX</td>
-            </tr>
-            <tr>
-              <td><img src="./../../postales/Paisajes/faro_01.jpg" alt="" class="thumbnail"></td>
-              <td>example@gmail.com</td>
-              <td>XX/XX/XXXX</td>
-            </tr>
           </tbody>
         </table>
       </div>
       <div class="tabContent col s12 l9" id="reci">
-        <table class="highlight">
+        <table class="highlight" id="recibidas">
           <thead>
             <tr>
               <th>Postal</th>
@@ -250,31 +234,6 @@ if(!isset($_SESSION["usuario"])){
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td><img src="./../../postales/Comida/starbucks_01.jpg" class="thumbnail"></td>
-              <td>example@gmail.com</td>
-              <td>XX/XX/XXXX</td>
-            </tr>
-            <tr>
-              <td><img src="./../../postales/Otros/el_bromas_01.jpg" alt="" class="thumbnail"></td>
-              <td>example@gmail.com</td>
-              <td>XX/XX/XXXX</td>
-            </tr>
-            <tr>
-              <td><img src="./../../postales/Fechas_fest/navidad_01.jpg" alt="" class="thumbnail"></td>
-              <td>example@gmail.com</td>
-              <td>XX/XX/XXXX</td>
-            </tr>
-            <tr>
-              <td><img src="./../../postales/Fechas_fest/navidad_01.jpg" alt="" class="thumbnail"></td>
-              <td>example@gmail.com</td>
-              <td>XX/XX/XXXX</td>
-            </tr>
-            <tr>
-              <td><img src="./../../postales/Fechas_fest/navidad_01.jpg" alt="" class="thumbnail"></td>
-              <td>example@gmail.com</td>
-              <td>XX/XX/XXXX</td>
-            </tr>
           </tbody>
         </table>
       </div>

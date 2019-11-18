@@ -134,5 +134,41 @@
         $respuesta = mysqli_query($conexion, $sql);
         return $respuesta;
     }
+    function get_postales_env($correo,$conexion){
+        $envios=array();
+        $sql = "SELECT usr.correo,date(env.fecha_hora) as 'fecha',cat.nombre,post.img from usuarios usr,".
+        "envios env,categorias cat,postales post where env.id_remitente=".
+        "(select id_usuario from usuarios where correo='".$correo."')".
+        "and usr.id_usuario=env.id_destinatario and env.id_postal=post.id_postal and ". 
+        "post.id_categoria=cat.id_categoria order by fecha;";
+        
+        $resultado = mysqli_query($conexion,$sql);
+        while ($fila = mysqli_fetch_assoc($resultado)) {
+            $envio=new stdClass;
+            $envio->destinatario =$fila["correo"];
+            $envio->fecha=cumple($fila["fecha"]);
+            $envio->postal="./../../postales/".$fila["nombre"]."/".$fila["img"];
+            array_push($envios,$envio);
+        }
+        return $envios;
+    }
+    function get_postales_rec($correo,$conexion){
+        $recibos=array();
+        $sql = "SELECT usr.correo,date(env.fecha_hora) as 'fecha',cat.nombre,post.img from usuarios usr,".
+        "envios env,categorias cat,postales post where env.id_destinatario=".
+        "(select id_usuario from usuarios where correo='".$correo."')".
+        "and usr.id_usuario=env.id_remitente and env.id_postal=post.id_postal and ". 
+        "post.id_categoria=cat.id_categoria order by fecha;";
+        
+        $resultado = mysqli_query($conexion,$sql);
+        while ($fila = mysqli_fetch_assoc($resultado)) {
+            $recibo=new stdClass;
+            $recibo->remitente =$fila["correo"];
+            $recibo->fecha=cumple($fila["fecha"]);
+            $recibo->postal="./../../postales/".$fila["nombre"]."/".$fila["img"];
+            array_push($recibos,$recibo);
+        }
+        return $recibos;
+    }
     
 ?>
