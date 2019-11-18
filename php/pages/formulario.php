@@ -1,3 +1,8 @@
+<?php
+include "./../functions/parsers.php";
+$hoy=getdate();
+$hoy_b=$hoy["year"]."-".$hoy["mon"]."-".$hoy["mday"];
+?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -107,9 +112,9 @@
               <div class="col s12 center">
                 Fecha de Nacimiento
                 <i class="fas fa-calendar-alt prefix"></i>
-                <input type="text" class="datepicker" name="date"/>
-                
-                
+                <?php
+                echo '<input type="text" class="datepicker" name="date" value="'.anti_parser($hoy_b).'"/>'
+                ?>
               </div>
               <div class="row"></div>
               <div class="row"></div>

@@ -26,7 +26,6 @@ else{
 
     $respAX["resp"] = $result;
     $_SESSION['usuario'] = $correo;
-    $_SESSION['conexion']=$conexion;
     echo json_encode($respAX);
 }
 

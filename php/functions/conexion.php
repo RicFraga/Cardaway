@@ -87,23 +87,52 @@
 
 
     }
-    
-    
-
-    
+    function get_datos($conexion){
+        $correo=$_SESSION["usuario"];
+        $sql = "SELECT * FROM usuarios WHERE  correo = '$correo'  ";
+        $resultado = mysqli_query($conexion,$sql);
+        $fila = mysqli_fetch_assoc($resultado);
+        $nombre= $fila["nombre"];
+        $primer_ap=$fila["primer_apellido"];
+        $segundo_ap=$fila["segundo_apellido"];
+        $fecha_nac=$fila["fecha_nac"];
+        $genero=$fila["genero"];
+        $foto=get_foto($correo,$genero);
+        return [$correo,$nombre,$primer_ap,$segundo_ap,$fecha_nac,$genero,$foto];
+    }
+    function get_foto($correo,$genero){
+       if(file_exists("./../../usuarios/$correo.jpg")){
+           return "./../../usuarios/$correo.jpg";
+       }
+       elseif(file_exists("./../../usuarios/$correo.png")){
+        return "./../../usuarios/$correo.png";
+       }
+       elseif(file_exists("./../../usuarios/$correo.gif")){
+        return "./../../usuarios/$correo.gif";
+       }
+       elseif($genero){
+        return "./../../usuarios/default_h.jpg";
+       }
+       else{
+        return "./../../usuarios/default_m.jpg"; 
+       }
+    }
+    function actualizar_usuario($nombre,$primer_ap,$segundo_ap,$correo,
+    $fechaNa,$genero,$contrasena,$correo_ant,$conexion){
+        if($contrasena==""){
+            $sql="Update usuarios Set correo='$correo', nombre='$nombre' ,".
+            " primer_apellido='$primer_ap',  segundo_apellido='$segundo_ap', fecha_nac='$fechaNa'". 
+            ", genero='$genero'  Where correo='$correo_ant';";
+        }
+        else{
+            $sql="Update usuarios Set correo='$correo', nombre='$nombre' ,".
+             " primer_apellido='$primer_ap',  segundo_apellido='$segundo_ap', fecha_nac='$fechaNa'". 
+             ", genero='$genero' ,  contrasena='".md5($contrasena)."' Where correo='$correo_ant';";
+        }
      
-       
-      
-      
-
-        
-
-        
-       
-        
-        
-       
-
+        //$sql = "SELECT * FROM usuarios WHERE correo  = '$correo'";
+        $respuesta = mysqli_query($conexion, $sql);
+        return $respuesta;
+    }
     
-
 ?>
