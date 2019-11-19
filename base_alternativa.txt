@@ -111,6 +111,17 @@ insert into envios values(10,3,11,"Ahora que ya no soy libre me encantaria poder
 insert into envios values(12,4,10,"Bosque , Lago y muchas nenas -niños del bosque 2k19","2019-03-02 10:17:43");
 
 
+insert into envios values(2,2,1,"Verá usted, estoy convencido de que la confianza se recupera aplicando una política de austeridad, aplicando una Ley de Estabilidad Presupuestaria y haciendo lo que hay que hacer. Esto lo vamos a seguir haciendo y tenemos que seguir haciéndolo.","2019-11-18 10:17:43");
+insert into envios values(23,1,8,"- Pues verá, tengo la firme convicción de que pronto la situación estará cambiando de forma sustancial y habrá creación de empleo; las huelgas no crean empleo.","2019-11-18 12:17:43");
+insert into envios values(8,10,8,"- No conozco a nadie que no quiera salir de la crisis. Yo le aseguro a usted que una cosa son los derechos sociales y otra cosa son los privilegios. Todos saben que los problemas no se resuelven detrás de una pancarta.","2019-11-18 13:17:43");
+insert into envios values(16,3,10,"- Creemos firmemente que sembrar la idea de que Mexico es un país corrupto es profundamente injusto; no hay que sembrar de incertidumbres el futuro. Si no tuviéramos deuda podríamos dedicar un montón de dinero a mejorar la sanidad.","2019-11-18 14:17:43");
+insert into envios values(6,7,5,"La ayuda a la enseñanza tiene como razón de ser el actuar como la piedra angular extracurricular en la base de la colocación del proyecto del alumnado en el centro del sistema.","2019-11-18 15:17:43");
+insert into envios values(5,4,1,"La enseñanza mediada debe prepararse para ser un corolario intra- y extraescolar indisociable de la colocación del proyecto del alumnado en el centro del sistema.","2019-11-18 16:17:43");
+insert into envios values(4,3,4,"- Si la situación no hubiera sido la que es, yo no habría tenido que tomar estas medidas; la situación es de extrema dificultad, pero si hacemos las cosas bien vamos a superar esta situación.","2019-11-18 17:17:43");
+insert into envios values(2,7,3,"La ayuda a la enseñanza debe prepararse para ser un crisol transdisciplinario indisociable de la colocación del proyecto del alumnado en el centro del sistema.","2019-11-18 18:17:43");
+insert into envios values(6,7,2,"La utilización de las Tecnologías de la Información y la Comunicación no puede entenderse sino como el eje transdisciplinario en el corazón del aprendizaje cotidiano del oficio de estudiante.","2019-11-18 19:17:43");
+insert into envios values(6,1,4,"La enseñanza mediada debe convertirse en el eje cívico al servicio del aprendizaje cotidiano del oficio de estudiante.","2019-11-18 20:17:43");
+
 
 
 
