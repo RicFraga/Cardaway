@@ -10,12 +10,23 @@
 
    
    if(actualizar_usuario($nombre,$primer_ap,$segundo_ap,$email,
-   parser($fecha_nac),$group1,$password,$correo_ant,$conexion)){             
+   parser($fecha_nac),$group1,$password,$correo_ant,$conexion)){
+    if($email != $correo_ant){
+
+      $my_foto=get_foto($correo_ant,false);
+      if($my_foto != "./../../usuarios/default_m.jpg"){
+         $extension= pathinfo($my_foto, PATHINFO_EXTENSION);
+         $new_name="./../../usuarios/".$email.".".$extension;
+         rename($my_foto,$new_name);
+      }
+      $_SESSION["usuario"]=$email;
+
+    }             
      if (isset($_FILES['uploadedFile']) && $_FILES['uploadedFile']['error'] === UPLOAD_ERR_OK) {
          if(($_FILES["uploadedFile"]["type"] == "image/jpeg")
             || ($_FILES["uploadedFile"]["type"] == "image/png")
             || ($_FILES["uploadedFile"]["type"] == "image/gif")) {
-               $my_foto=get_foto($correo_ant,false);
+               $my_foto=get_foto($email,false);
                if($my_foto != "./../../usuarios/default_m.jpg"){
                   unlink($my_foto);
                }

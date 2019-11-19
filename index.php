@@ -74,6 +74,7 @@
               echo '<li id="nav-li"><a href="./php/pages/formulario.php"><button class="btn">Crea tu Cuenta</button></a></li>';
   }
           else{
+            echo  '<li id="nav-li"><a href="./php/pages/user_page.php">Mi cuenta</a></li>';
             echo  '<li id="nav-li"><a href="./php/functions/cerrar_session.php">Cerrar Sesión</a></li>';
           }
           ?>

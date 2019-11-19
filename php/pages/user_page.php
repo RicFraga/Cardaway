@@ -207,6 +207,7 @@ if(!isset($_SESSION["usuario"])){
                 </div>
             </div>
             <button  type="submit" name="action" class="btn">Guardar Cambios</button>
+            <a class="right">*Formatos Aceptados:(gif,jpg,png) , Tamaño recomendado:500*500 </a>
           </form>
         </div>
       </div>

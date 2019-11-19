@@ -25,6 +25,7 @@ $(document).ready(function(){
                 contentType: false,
                 processData: false,
                 success:function(respAX){
+                    //alert(respAX);
                     var AX = JSON.parse(respAX);
                     if(AX.msj == 1){
                         myswal.fire(
