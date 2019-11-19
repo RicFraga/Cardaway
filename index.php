@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -65,9 +68,16 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a class="btn" id ="postales">Postales</a></li>
           <li><a class="btn">Crear Postal</a></li>
-          <li id="nav-li"><a class ="waves-effect waves-light btn modal-trigger" href="#login">Iniciar Sesion</a></li>
-          <li id="nav-li"><a href="./php/pages/formulario.php"><button class="btn">Crea tu Cuenta</button></a></li>
-        </ul>
+          <?php
+          if(!isset($_SESSION["usuario"])){
+              echo '<li id="nav-li"><a class ="waves-effect waves-light btn modal-trigger" href="#login">Iniciar Sesion</a></li>';
+              echo '<li id="nav-li"><a href="./php/pages/formulario.php"><button class="btn">Crea tu Cuenta</button></a></li>';
+  }
+          else{
+            echo  '<li id="nav-li"><a href="./php/functions/cerrar_session.php">Cerrar Sesión</a></li>';
+          }
+          ?>
+          </ul>
       </div>
     </nav>
   </header>
@@ -86,19 +96,19 @@
           <div class="input-field">
               <i class="fas fa-envelope prefix"></i>
               <input type="text" id="usuario" name="usuario" data-validetta="email" data-validetta="required">
-              <label for="usuario">email</label>
+              <label for="usuario">Email</label>
           </div>
           
           <div class="input-field">
               <i class="fas fa-key prefix"></i>
               <input type="password" id="contrasena" name="contrasena" data-validetta="required">
-              <label for="contrasena">contrasena</label>
+              <label for="contrasena">Contraseña</label>
 
           </div>
 
           <div class="enviar">
 
-            <button class="btn" type="submit">entrar</button>
+            <button class="btn" type="submit">Entrar</button>
           
           </div>
 

@@ -38,13 +38,8 @@ $hoy_b=$hoy["year"]."-".$hoy["mon"]."-".$hoy["mday"];
       <header>
           <nav>
             <div class="nav-wrapper">
-              <a href="./../../inicio.php" class="brand-logo">CARDAWAY</a>
-              <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a class="btn">Postales</a></li>
-                <li><a class="btn">Crear Postal</a></li>
-                <li id="nav-li"><a href="#">Iniciar Sesión</a></li>
-                <li id="nav-li"><a href="#">Crea Tu Cuenta</a></li>
-              </ul>
+              <a href="./../../" class="brand-logo">CARDAWAY</a>
+            
             </div>
           </nav>
         </header>

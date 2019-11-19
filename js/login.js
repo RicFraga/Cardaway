@@ -21,7 +21,7 @@ $(document).ready(function(){
                 if(AX.resp != 0){
 
                     Swal.fire(
-                        'Bienvenido!',
+                        'Bienvenid@!',
                          AX.resp,
                         'success'
                         
