@@ -65,7 +65,7 @@
         4 => $viernes['r'],
         5 => $sabado['r'],
         6 => $domingo['r']
-        );        
+    );
 
     echo json_encode($data);
 ?>
