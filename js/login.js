@@ -53,7 +53,46 @@ $(document).ready(function(){
         }
     
     });
+var post_ini=6;
+    carga_postales(post_ini);
+var limite=6;
+    $(window).scroll(function() {
+      if($(window).scrollTop() + $(window).height() == $(document).height()){
+
+        carga_postales(limite);
+        
+      }
+    });
 
    
      
 });
+
+var offset=0;
+
+function carga_postales(limit){       
+$.ajax({
+  method:"POST",
+  url:"./php/functions/cargar_postales.php",
+  cache:false,
+  data:{
+      offset : offset,
+      limit : limit
+  },
+  success:function(respAX){
+      console.log(respAX);
+      //alert(respAX);
+      var i=0;
+      var AX = JSON.parse(respAX);
+      AX.postales.forEach(element => {
+              offset+=1;
+              $("#cargador"+String(i%3))[0].innerHTML += 
+              '<img src="'+element+'" class="gal-img" alt="">';
+              i+=1;
+      });
+
+      
+  }
+  
+});
+}

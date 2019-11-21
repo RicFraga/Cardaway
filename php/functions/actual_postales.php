@@ -1,11 +1,11 @@
 <?php
     include("./parsers.php");
     include("./conexion.php");
-    
+    include("./get_Posts.php");
     $myObj= new stdClass;
     session_start();
     $correo=$_SESSION["usuario"];
-    $envios=get_postales_env($correo,$conexion);
+    $envios=get_postales_env($correo,$conexion,$offset_e);
     $myObj->enviadas=$envios;
 
         //$envio=new stdClass;
@@ -21,7 +21,7 @@
         // array_push($envios,$envio);
         
         // 
-        $recibos=get_postales_rec($correo,$conexion);
+        $recibos=get_postales_rec($correo,$conexion,$offset_r);
         $myObj->recibidas=$recibos;
         
 $myJSON = json_encode($myObj);
