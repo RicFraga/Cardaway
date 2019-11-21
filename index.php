@@ -186,26 +186,17 @@
         </div>
         <div class="row">
           <div class="gallery-col col s4">
-            <img src="./postales/Paisajes/playa_01.jpg" class="gal-img" alt="" id="test">
-            <img src="./postales/Vintage/motoneta_01.jpg" class="gal-img" alt="">
-            <img src="./postales/Comida/limones_01.jpg" class="gal-img" alt="">
-            <img src="./postales/Paisajes/vias_02.jpg" alt="" class="gal-img">
+            <div id="cargador0"></div>
           </div>
           <div class="gallery-col col s4">
-            <img src="./postales/Paisajes/faro_01.jpg" class="gal-img" alt="">
-            <img src="./postales/Paisajes/edificios_01.jpg" class="gal-img" alt="">
-            <img src="./postales/Vintage/calle_old_01.jpg" class="gal-img" alt="">
-            <img src="./postales/Paisajes/vias_01.jpg" class="gal-img" alt="">
+            <div id="cargador1"></div>
           </div>
           <div class="gallery-col col s4">
-            <img src="./postales/Comida/pina_01.jpg" class="gal-img" alt="">
-            <img src="./postales/Paisajes/lago_01.jpg" class="gal-img" alt="">
-            <img src="./postales/Otros/girasol_01.jpg" class="gal-img" alt="">
+            <div id="cargador2"></div>
           </div>
         </div>
       </div>
     </div>
-
   </main>
 
   <!--JavaScript at end of body for optimized loading-->

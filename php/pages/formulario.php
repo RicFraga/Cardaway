@@ -78,7 +78,7 @@ $hoy_b=$hoy["year"]."-".$hoy["mon"]."-".$hoy["mday"];
             <!-- Campo Correo -->
             <div class="input-field col s12 m6">
               <i class="fas fa-at prefix"></i>
-              <input type ="email" id="correo"  name="correo" data-validetta="email"/>
+              <input type ="email" id="correo"  name="correo" data-validetta="required,email"/>
               <label for="email">Correo</label>
             </div>
           </div>
