@@ -14,12 +14,10 @@ create table postales(id_postal  int unsigned not null primary key auto_incremen
 create table envios(id_postal  int unsigned not null ,id_remitente int unsigned not null,
 id_destinatario int unsigned not null ,dedicatoria varchar(256),fecha_hora timestamp not null,
 primary key(id_postal,id_remitente,id_destinatario,fecha_hora),
-foreign key(id_postal) references postales(id_postal),
-foreign key(id_destinatario) references usuarios(id_usuario),
-foreign key(id_remitente) references usuarios(id_usuario)
+foreign key(id_postal) references postales(id_postal) ON DELETE CASCADE ,
+foreign key(id_destinatario) references usuarios(id_usuario) ON DELETE CASCADE ,
+foreign key(id_remitente) references usuarios(id_usuario) ON DELETE CASCADE 
  );
-
-
 
 
 
@@ -122,10 +120,8 @@ insert into envios values(2,7,3,"La ayuda a la enseñanza debe prepararse para s
 insert into envios values(6,7,2,"La utilización de las Tecnologías de la Información y la Comunicación no puede entenderse sino como el eje transdisciplinario en el corazón del aprendizaje cotidiano del oficio de estudiante.","2019-11-18 19:17:43");
 insert into envios values(6,1,4,"La enseñanza mediada debe convertirse en el eje cívico al servicio del aprendizaje cotidiano del oficio de estudiante.","2019-11-18 20:17:43");
 
-
-
-
-
+create table admin(nombre varchar(32) not null,contrasena varchar(32) not null); 
+insert into admin values("admin","admin");
 
 
 
