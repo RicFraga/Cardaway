@@ -66,8 +66,7 @@
       <div class="nav-wrapper">
         <a href="#" class="brand-logo">CARDAWAY</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a class="btn" id ="postales">Postales</a></li>
-          <li><a class="btn">Crear Postal</a></li>
+          
           <?php
           if(!isset($_SESSION["usuario"])){
               echo '<li id="nav-li"><a class ="waves-effect waves-light btn modal-trigger" href="#login">Iniciar Sesion</a></li>';
@@ -128,8 +127,8 @@
     echo '<div class="myModal">';
     echo '<div class="myCard">';
     echo '<div class="card-content">';
-    echo '<a class="waves-effect waves-light btn" id="enviar">Enviar</a>';
-    echo '<a class="waves-effect waves-light btn">Editar</a>';
+    echo '<a class="waves-effect waves-light btn center" id="enviar">Enviar</a>';
+
     echo '</div>';
     echo '<div class="container" id="modal-container">';
     echo '<img src="" alt="" class="modal-img" id="modal-test">';
