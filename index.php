@@ -121,21 +121,39 @@
     </div>
 
   <main>
-
-    <div class="myModal">
-      <div class="myCard">
-        <div class="card-content">
-          <a class="waves-effect waves-light btn">Enviar</a>
-          <a class="waves-effect waves-light btn">Editar</a>
-        </div>
-        <div class="container" id="modal-container">
-          <img src="" alt="" class="modal-img" id="modal-test">
-        </div>
-      </div>
-      <div class="close">
-        <span id="close">X</span>
-      </div>
-    </div>
+<?php
+  if(isset($_SESSION["usuario"])){
+             
+  
+    echo '<div class="myModal">';
+    echo '<div class="myCard">';
+    echo '<div class="card-content">';
+    echo '<a class="waves-effect waves-light btn" id="enviar">Enviar</a>';
+    echo '<a class="waves-effect waves-light btn">Editar</a>';
+    echo '</div>';
+    echo '<div class="container" id="modal-container">';
+    echo '<img src="" alt="" class="modal-img" id="modal-test">';
+    echo '</div>';
+    echo '</div>';
+    echo '<div class="close">';
+    echo '<span id="close">X</span>';
+    echo ' </div>';
+    echo '</div>';
+}
+else{
+  echo '<div class="myModal">';
+  echo '<div class="myCard">';
+  echo '<div class="container" id="modal-container">';
+  echo '<img src="" alt="" class="modal-img" id="modal-test">';
+  echo '</div>';
+  echo '</div>';
+  echo '<div class="close">';
+  echo '<span id="close">X</span>';
+  echo ' </div>';
+  echo '</div>';
+  
+}
+?>
 
     <div class="row" id="slider-row">
       <div class="divBtn" id="prevBtn"></div>

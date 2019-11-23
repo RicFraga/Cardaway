@@ -80,7 +80,7 @@ $.ajax({
       limit : limit
   },
   success:function(respAX){
-      console.log(respAX);
+      //console.log(respAX);
       //alert(respAX);
       var i=0;
       var AX = JSON.parse(respAX);
