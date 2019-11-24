@@ -127,7 +127,7 @@
     echo '<div class="myModal">';
     echo '<div class="myCard">';
     echo '<div class="card-content">';
-    echo '<a class="waves-effect waves-light btn center" id="enviar">Enviar</a>';
+    echo '<a class="waves-effect waves-light btn center" id="enviar" href="./php/pages/envio.php">Enviar</a>';
 
     echo '</div>';
     echo '<div class="container" id="modal-container">';
