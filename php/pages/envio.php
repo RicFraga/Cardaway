@@ -68,7 +68,7 @@
                             /*Inicio captura de datos enviados por $_POST para enviar el correo */
                             $mail_setFromEmail="investment.cto@gmail.com";
                             $mail_addAddress=$_POST['recipent_email'];//correo electronico que recibira el mensaje
-                            $mail_setFromName="Luis Aldo";
+                            $mail_setFromName="Cardaway";
                             $txt_message=$_POST['msj'];
                             $mail_subject=$_POST['subject'];
                             
