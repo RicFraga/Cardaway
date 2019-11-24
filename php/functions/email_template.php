@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   <title>Airmail Ping</title>
   <style type="text/css">
@@ -402,26 +402,26 @@
                 <td>
                   <table class="soapbox">
                     <tr>
-                      <td class="soapbox-title">Mensaje enviado desde el formulario de contacto del sitio web</td>
+                      <td class="soapbox-title">Cardaway</td>
                     </tr>
                   </table>
                   <table class="body">
                     <tr>
                       <td class="body-padding"></td>
                       <td class="body-padded">
-                        <div class="body-title">Mensaje enviado por: {{first_name}}, ({{customer_email}})</div>
+                        <div class="body-title">Mensaje enviado por: {{first_name}}</div>
                         <table class="body-text">
                           <tr>
                             <td class="body-text-cell">
                               {{message}}
+                              <img src="./../../postales/Amor/gato_01.png" alt="">
                             </td>
                           </tr>
                         </table>
-                        
                         <table class="body-signature-block">
                           <tr>
                             <td class="body-signature-cell">
-                              <p>Thanks for being a customer!</p>
+                              <p>Gracias por usar Cardaway</p>
                               <p class="body-signature"><img src="https://www.filepicker.io/api/file/2R9HpqboTPaB4NyF35xt" alt="Company Name"></p>
                             </td>
                           </tr>
