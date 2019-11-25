@@ -1,10 +1,19 @@
 <?php
   session_start();
 ?>
+<?php
+// READ FILES FROM THE GALLERY FOLDER
+
+$category=$_GET["id"];
+$dir = __DIR__ . DIRECTORY_SEPARATOR ;
+$dir.="Postales".DIRECTORY_SEPARATOR.$category.DIRECTORY_SEPARATOR;
+$images = glob($dir . "*.{jpg,jpeg,gif,png}", GLOB_BRACE);
+$index=(int)(count($images)/3);
+
+// DRAW HTML ?>
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
   <meta charset="utf-8">
   <!--Import Google Icon Font-->
   <link href="./icons/icons.css" rel="stylesheet" />
@@ -50,21 +59,15 @@
     });
   
   </script>
+  </head>
 
-  
 
-  
-</head>
-
-<body>
-  
-
-  
+  <body>
 
   <header>
     <nav>
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo">CARDAWAY</a>
+        <a href="./" class="brand-logo">CARDAWAY</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           
           <?php
@@ -81,12 +84,6 @@
       </div>
     </nav>
   </header>
-
-
-
-
-  <!--Login -->
-
 
   <div class ="modal" id="login">
 
@@ -119,110 +116,75 @@
       
   </div>
 
-  <main>
-<?php
-  if(isset($_SESSION["usuario"])){
-             
-  
-    echo '<div class="myModal">';
-    echo '<div class="myCard">';
-    echo '<div class="card-content">';
-    echo '<a class="waves-effect waves-light btn center" id="enviar" href="./php/pages/envio.php">Enviar</a>';
+    <?php
+      if(isset($_SESSION["usuario"])){
+                
+      
+        echo '<div class="myModal">';
+        echo '<div class="myCard">';
+        echo '<div class="card-content">';
+        echo '<a class="waves-effect waves-light btn center" id="enviar" href="./php/pages/envio.php">Enviar</a>';
 
-    echo '</div>';
-    echo '<div class="container" id="modal-container">';
-    echo '<img src="" alt="" class="modal-img" id="modal-test">';
-    echo '</div>';
-    echo '</div>';
-    echo '<div class="close">';
-    echo '<span id="close">X</span>';
-    echo ' </div>';
-    echo '</div>';
-}
-else{
-  echo '<div class="myModal">';
-  echo '<div class="myCard">';
-  echo '<div class="container" id="modal-container">';
-  echo '<img src="" alt="" class="modal-img" id="modal-test">';
-  echo '</div>';
-  echo '</div>';
-  echo '<div class="close">';
-  echo '<span id="close">X</span>';
-  echo ' </div>';
-  echo '</div>';
-  
-}
-?>
-
-    <div class="row" id="slider-row">
-      <div class="divBtn" id="prevBtn"></div>
-      <div class="container" id="slides-container">
-        <div class="mySlider-slides">
-          <img src="./postales/Paisajes/lago_01.jpg" alt="" class="slider-img" id="lastClone">
-          <img src="./postales/Paisajes/playa_01.jpg" alt="" class="slider-img">
-          <img src="./postales/Paisajes/vias_01.jpg" alt="" class="slider-img">
-          <img src="./postales/Comida/limones_01.jpg" alt="" class="slider-img">
-          <img src="./postales/Paisajes/vias_02.jpg" alt="" class="slider-img">
-          <img src="./postales/Paisajes/lago_01.jpg" alt="" class="slider-img">
-          <img src="./postales/Paisajes/playa_01.jpg" alt="" class="slider-img" id="firstClone">
-        </div>
-      </div>
-      <div class="title">
-        <p>Destacados:</p>
-      </div>
-      <div class="divBtn" id="nextBtn"></div>
-    </div>
-
-    <div class="row">
-      <div class="col s12">
-        <h1 class="center-align" id="slogan">Conecta con las personas que amas</h1>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="container" id="icon-container">
-        <div class="icon-div"><a href="cat.php?id=Amor" id="icons"><i class="material-icons">favorite_border</i></a></div>
-        <div class="icon-div"><a href="cat.php?id=Fechas_fest" id="icons"><i class="material-icons">date_range</i></a></div>
-        <div class="icon-div"><a href="cat.php?id=Vintage" id="icons"><i class="material-icons">history</i></a></div>
-        <div class="icon-div"><a href="cat.php?id=Comida" id="icons"><i class="material-icons">local_dining</i></a></div>
-        <div class="icon-div"><a href="cat.php?id=Paisajes" id="icons"><i class="material-icons">beach_access</i></a></div>
-        <div class="icon-div"><a href="cat.php?id=Otros" id="icons"><i class="material-icons">search</i></a></div>
-      </div>
-    </div>
-
+        echo '</div>';
+        echo '<div class="container" id="modal-container">';
+        echo '<img src="" alt="" class="modal-img" id="modal-test">';
+        echo '</div>';
+        echo '</div>';
+        echo '<div class="close">';
+        echo '<span id="close">X</span>';
+        echo ' </div>';
+        echo '</div>';
+      }
+      else{
+        echo '<div class="myModal">';
+        echo '<div class="myCard">';
+        echo '<div class="container" id="modal-container">';
+        echo '<img src="" alt="" class="modal-img" id="modal-test">';
+        echo '</div>';
+        echo '</div>';
+        echo '<div class="close">';
+        echo '<span id="close">X</span>';
+        echo ' </div>';
+        echo '</div>';
+        
+      }
+    ?>
+    <!-- [THE GALLERY] -->
     <div class="row">
       <div class="container" id="gal-container">
         <div class="row">
           <div class="col s3">
-            <h4>Galería</h4>
+            <?php 
+              printf("<h4>%s</h4>",$category);
+            ?>
           </div>
         </div>
         <div class="row">
           <div class="gallery-col col s4">
-            <div id="cargador0"></div>
+            <?php
+              for($i=0;$i<$index;$i++) {
+                printf("<img src='Postales/%s/%s' class='gal-img'>", $category,basename($images[$i]));
+              }
+            ?>
           </div>
           <div class="gallery-col col s4">
-            <div id="cargador1"></div>
+            <?php
+              for($i=$i;$i<($index*2);$i++) {
+                printf("<img src='Postales/%s/%s' class='gal-img'>", $category,basename($images[$i]));
+              }
+            ?>
           </div>
           <div class="gallery-col col s4">
-            <div id="cargador2"></div>
+            <?php
+              for($i=$i;$i<count($images);$i++) {
+                printf("<img src='Postales/%s/%s' class='gal-img'>", $category,basename($images[$i]));
+              }
+            ?>
           </div>
         </div>
       </div>
     </div>
-  </main>
 
-  <!--JavaScript at end of body for optimized loading-->
-  <!-- Compiled and minified JavaScript -->
-  
-  <script src="./js/mySlide.js"></script>
-  <script src="./js/modal.js"></script>
-  
-  
-</body>
-
-
-
- 
-
+    <script src="./js/modal.js"></script>
+  </body>
 </html>
