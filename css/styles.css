@@ -22,7 +22,7 @@ body{
 
 .formWrap{
     width: 100%;
-    height: 100%;
+    height: 616px;
     margin: 0px 0px;
     display: flex;
     background: #FFF;
@@ -155,6 +155,7 @@ form.formContact textArea{
 }
 
 form.formContact input[type="submit"]{
+    margin: 15px;
     width: 180px;
     background: #4091EC;
     padding: 10px;
@@ -211,7 +212,7 @@ form.formContact input[type="submit"]:hover{
     width: 100%;
     height: 1px;
     background: #C5C5C5;
-    margin: 
+    margin: 0px;
 }
 
 .msjModal p{
