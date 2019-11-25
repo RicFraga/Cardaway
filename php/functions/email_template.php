@@ -408,7 +408,7 @@
                     <tr>
                       <td class="body-padding"></td>
                       <td class="body-padded">
-                        <div class="body-title">Mensaje enviado por: {{first_name}}</div>
+                        <div class="body-title">{{first_name}}</div>
                         <table class="body-text">
                           <tr>
                             <td class="body-text-cell">
@@ -416,7 +416,7 @@
                             </td>
                           </tr>
                         </table>
-                        <p>esta es una imagen<br><img src='cid:images' alt=""></p>
+                        <p><br><img src='cid:images' alt=""></p>
                         <table class="body-signature-block">
                           <tr>
                             <td class="body-signature-cell">
