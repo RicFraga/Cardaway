@@ -10,34 +10,27 @@
         <link rel="stylesheet" href="./../../css/styles.css">
         <link rel="stylesheet" href="./../../css/font-awesome.css">
         
-        <!--Referencias a archivos JS-->
+        <!--Referencias a archivos JS-->     
+        <script src="https://use.fontawesome.com/9aabbc7573.js"></script>
         <script src="../../js/jquery-3.4.1.js"></script>
         <script src="../../js/script.js"></script>
         
     </head>
-    <body>
-
+    <body>  
         <div id="barraMenu">
             <ul class="nav">
                 <li><a href="./../../index.php">Inicio</a></li>
-                <li><a href="">Mi cuenta</a></li>
-                <li><a href="">Postales</a>
-                    <ul class="post">
-                        <li><a href="">Recividas</a></li>
-                        <li><a href="">Enviadas</a></li>
-                    </ul>
-                </li>
+                <li><a href="./user_page.php">Mi cuenta</a></li>
             </ul>
         </div>
-        <sect'ion class="formWrap">
+        <section class="formWrap">
             <section class="contactInfo">
                 <section class="infoTitle">
                     <span class="fa fa-user-circle"></span>
                     <h2>Información<br>de contacto</h2>
                 </section>
                 <section class="infoItems">
-                    <p><span class="fa fa-envelope"></span>investment.cto@gmail.com</p>
-                    <p><span class="fa fa-mobile"></span>5617355774</p>
+                    <p><span class="fa fa-envelope"></span>Cardaway</p>
                 </section>
             </section>
             <form method="post" class="formContact">
@@ -51,6 +44,8 @@
 
                     <label for="Msj">Mensaje*</label>
                     <textarea id="Msj" name="msj" required></textarea>
+
+                    <label for="postal">La imagen seleccionada se cargara de forma automatica.</label>
 
                    <input type="submit" value="Enviar mensaje" id="btnSend" name="send">
                     <?php
