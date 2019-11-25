@@ -12,6 +12,8 @@ function sendemail($mail_username,$mail_userpassword,$mail_setFromEmail,$mail_se
 	$mail->setFrom($mail_setFromEmail, $mail_setFromName);//Introduzca la dirección de la que debe aparecer el correo electrónico. Puede utilizar cualquier dirección que el servidor SMTP acepte como válida. El segundo parámetro opcional para esta función es el nombre que se mostrará como el remitente en lugar de la dirección de correo electrónico en sí.
 	$mail->addReplyTo($mail_setFromEmail, $mail_setFromName);//Introduzca la dirección de la que debe responder. El segundo parámetro opcional para esta función es el nombre que se mostrará para responder
 	$mail->addAddress($mail_addAddress);   // Agregar quien recibe el e-mail enviado
+	$mail->AddEmbeddedImage('./../../postales/Amor/gato_01.png', 'images', "gato_01.png");
+
 	$message = file_get_contents($template);
 	$message = str_replace('{{first_name}}', $mail_setFromName, $message);
 	$message = str_replace('{{message}}', $txt_message, $message);
