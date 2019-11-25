@@ -25,7 +25,6 @@ $hoy_b=$hoy["year"]."-".$hoy["mon"]."-".$hoy["mday"];
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js"></script>
 <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
-  <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
 
     <!--VALIDETTA-->
     <link href="./../../validetta/validetta.css" rel="stylesheet" type="text/css" media="screen">
