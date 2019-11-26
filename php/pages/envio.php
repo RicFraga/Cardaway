@@ -53,12 +53,12 @@
                             include("./../functions/sendemail.php");//Mando a llamar la funcion que se encarga de enviar el correo electronico
                             
                             /*Configuracion de variables para enviar el correo*/
-                            $mail_username="investment.cto@gmail.com";//Correo electronico saliente ejemplo: tucorreo@gmail.com
+                            $mail_username="cardaway.send@gmail.com";//Correo electronico saliente ejemplo: tucorreo@gmail.com
                             $mail_userpassword="Darkamex1998*&";//Tu contraseña de gmail
                             $template="./../functions/email_template.php";//Ruta de la plantilla HTML para enviar nuestro mensaje
                             
                             /*Inicio captura de datos enviados por $_POST para enviar el correo */
-                            $mail_setFromEmail="investment.cto@gmail.com";
+                            $mail_setFromEmail="cardaway.send@gmail.com";
                             $mail_addAddress=$_POST['recipent_email'];//correo electronico que recibira el mensaje
                             $mail_setFromName=$_POST['subject'];
                             $txt_message=$_POST['msj'];
