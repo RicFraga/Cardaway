@@ -421,6 +421,7 @@
                           <tr>
                             <td class="body-signature-cell">
                               <p>Gracias por usar Cardaway</p>
+                              <p><a href="C:\xampp\htdocs\Cardaway\php\functions\printPdf.php">Imprimir en PDF</a></p>
                             </td>
                           </tr>
                         </table>
