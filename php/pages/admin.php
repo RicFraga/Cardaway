@@ -39,6 +39,11 @@ background: black;
 height: 3px; 
 }
 
+body{
+
+background
+  
+}
 
 
 
@@ -69,7 +74,7 @@ height: 3px;
         <li class="tab col s3"><a href="#test1">Usuarios</a></li>
         <li class="tab col s3"><a href="#test2">Postales</a></li>
         <li class="tab col s3"><a href="#test3">Estadisticas</a></li>
-        <li class="tab col s3"><a href="./../functions/generar_pdf.php"  target="_blank ">Generar Reporte</a></li>
+        <li class="tab col s3"><a href="./../functions/generar_pdf.php" target="_blank ">Generar Reporte</a></li>
   
       </ul>
     </div>
@@ -275,9 +280,28 @@ height: 3px;
     </div>
 <!-------------------------------------------------------------->
 
-    <div id="test3" class="col s12">HDSPTM ESTOY MAMADISIMO</div>
+    
 
-    <div id="test4" class="col s12">HDSPTM ESTOY MAMADISIMO x2</div>
+    <div id="test3" class="col s12">
+
+            <form class ="center-align">
+
+            <a button class ="btn-large #1565c0 blue darken-3" href="../functions/grafica_categorias_mas_gustadas.php" target="_blank">Categorias mas gustadas</button></a>
+            <a button class ="btn-large #1565c0 blue darken-3" href="../functions/grafica_envios_semanales.php" target="_blank">Envios semanales</button></a>
+            <a button class ="btn-large #1565c0 blue darken-3" href="../functions/grafica_generos.php" target="_blank">Genero</button></a>
+            <a button class ="btn-large #1565c0 blue darken-3" href="../functions/grafica_postales_mas_gustadas.php" target="_blank">Postales mas gustadas</button></a>
+            </form>
+
+     
+
+
+    
+    
+    </div>
+
+
+
+
   </div>
     
 
