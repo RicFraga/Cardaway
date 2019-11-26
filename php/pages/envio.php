@@ -41,7 +41,7 @@
                 </section>
             </section>
             <form method="post" class="formContact">
-                <h2>Envia un mensaje</h2>
+                <h2>Envia una postal</h2>
                 <div class="userInfo">  
                     <label for="names">Asunto*</label>
                     <input type="text" placeholder="Asunto" id="name" name="subject" required>
@@ -51,9 +51,6 @@
 
                     <label for="Msj">Mensaje*</label>
                     <textarea id="Msj" name="msj" required></textarea>
-
-                    <label for="foto">Foto:</label>
-                    <input type="file" id="foto" name="foto">
 
                    <input type="submit" value="Enviar mensaje" id="btnSend" name="send">
                     <?php
@@ -68,7 +65,7 @@
                             /*Inicio captura de datos enviados por $_POST para enviar el correo */
                             $mail_setFromEmail="investment.cto@gmail.com";
                             $mail_addAddress=$_POST['recipent_email'];//correo electronico que recibira el mensaje
-                            $mail_setFromName="Cardaway";
+                            $mail_setFromName=$_POST['subject'];
                             $txt_message=$_POST['msj'];
                             $mail_subject=$_POST['subject'];
                             

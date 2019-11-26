@@ -384,7 +384,6 @@
           <div class="content">
             <span class="brand">
               <a href="#">
-                {{first_name}}
               </a>
             </span>
           </div>
@@ -409,20 +408,19 @@
                     <tr>
                       <td class="body-padding"></td>
                       <td class="body-padded">
-                        <div class="body-title">Mensaje enviado por: {{first_name}}</div>
+                        <div class="body-title">{{first_name}}</div>
                         <table class="body-text">
                           <tr>
                             <td class="body-text-cell">
                               {{message}}
-                              <img src="./../../postales/Amor/gato_01.png" alt="">
                             </td>
                           </tr>
                         </table>
+                        <p><br><img src='cid:images' alt=""></p>
                         <table class="body-signature-block">
                           <tr>
                             <td class="body-signature-cell">
                               <p>Gracias por usar Cardaway</p>
-                              <p class="body-signature"><img src="https://www.filepicker.io/api/file/2R9HpqboTPaB4NyF35xt" alt="Company Name"></p>
                             </td>
                           </tr>
                         </table>
