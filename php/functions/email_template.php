@@ -436,34 +436,6 @@
         <td></td>
       </tr>
     </table>
-
-    <table class="footer-wrap w320 full-width-gmail-android" bgcolor="#e5e5e5">
-      <tr>
-        <td></td>
-        <td class="container">
-          <div class="content footer-lead">
-            <a href="#"><b>Get in touch</b></a> if you have any questions or feedback
-          </div>
-        </td>
-        <td></td>
-      </tr>
-    </table>
-    <table class="footer-wrap w320 full-width-gmail-android" bgcolor="#e5e5e5">
-      <tr>
-        <td></td>
-        <td class="container">
-          <div class="content">
-            <a href="#">Contact Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-            <span class="footer-group">
-              <a href="#">Facebook</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-              <a href="#">Twitter</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-              <a href="#">Support</a>
-            </span>
-          </div>
-        </td>
-        <td></td>
-      </tr>
-    </table>
   </div>
 
 </body>

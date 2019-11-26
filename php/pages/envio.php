@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html> 
 <html>
     <head>
@@ -44,7 +48,7 @@
 
                     <label for="Msj">Mensaje*</label>
                     <textarea id="Msj" name="msj" required></textarea>
-
+                    
                     <label for="postal">La imagen seleccionada se cargara de forma automatica.</label>
 
                    <input type="submit" value="Enviar mensaje" id="btnSend" name="send">
@@ -53,15 +57,16 @@
                             include("./../functions/sendemail.php");//Mando a llamar la funcion que se encarga de enviar el correo electronico
                             
                             /*Configuracion de variables para enviar el correo*/
-                            $mail_username="investment.cto@gmail.com";//Correo electronico saliente ejemplo: tucorreo@gmail.com
-                            $mail_userpassword="Darkamex1998*&";//Tu contraseña de gmail
+                            $mail_username="Cardaway.sender@gmail.com";//Correo electronico saliente ejemplo: tucorreo@gmail.com
+                            $mail_userpassword="hola1234#";//Tu contraseña de gmail
                             $template="./../functions/email_template.php";//Ruta de la plantilla HTML para enviar nuestro mensaje
-                            
+                            //session_start();
+                            $remitente=$_SESSION["usuario"];
                             /*Inicio captura de datos enviados por $_POST para enviar el correo */
-                            $mail_setFromEmail="investment.cto@gmail.com";
+                            $mail_setFromEmail="Cardaway.sender@gmail.com";
                             $mail_addAddress=$_POST['recipent_email'];//correo electronico que recibira el mensaje
                             $mail_setFromName=$_POST['subject'];
-                            $txt_message=$_POST['msj'];
+                            $txt_message="Enviado Por: ".$remitente."<br>".str_replace("\n","<br>",$_POST['msj']);
                             $mail_subject=$_POST['subject'];
                             
                             sendemail($mail_username,$mail_userpassword,$mail_setFromEmail,$mail_setFromName,$mail_addAddress,$txt_message,$mail_subject,$template);//Enviar el mensaje

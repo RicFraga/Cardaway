@@ -50,7 +50,7 @@ function postal_session(){
           //console.log(respAX);
           //alert(respAX);
           //pagina de Aldo 
-          window.location.replace("./php/pages/borrame.php");
+          window.location.replace("./php/pages/envio.php");
           }
 });
 }
