@@ -179,14 +179,15 @@
         $respuesta = mysqli_query($conexion, $sql);
         return $respuesta;
     }
-    function get_postales_env($correo,$conexion){
+    function get_postales_env($correo,$conexion,$offset){
         $envios=array();
+        $resultado = mysqli_query($conexion,"select count(*) from envios");
+        $limite=mysqli_fetch_assoc($resultado)["count(*)"];
         $sql = "SELECT usr.correo,date(env.fecha_hora) as 'fecha',cat.nombre,post.img from usuarios usr,".
         "envios env,categorias cat,postales post where env.id_remitente=".
         "(select id_usuario from usuarios where correo='".$correo."')".
         "and usr.id_usuario=env.id_destinatario and env.id_postal=post.id_postal and ". 
-        "post.id_categoria=cat.id_categoria order by fecha;";
-        
+        "post.id_categoria=cat.id_categoria order by fecha  LIMIT ".$limite." OFFSET ".$offset.";";
         $resultado = mysqli_query($conexion,$sql);
         while ($fila = mysqli_fetch_assoc($resultado)) {
             $envio=new stdClass;
@@ -197,15 +198,17 @@
         }
         return $envios;
     }
-    function get_postales_rec($correo,$conexion){
+    function get_postales_rec($correo,$conexion,$offset){
         $recibos=array();
+        $resultado = mysqli_query($conexion,"select count(*) from envios");
+        $limite=mysqli_fetch_assoc($resultado)["count(*)"];
         $sql = "SELECT usr.correo,date(env.fecha_hora) as 'fecha',cat.nombre,post.img from usuarios usr,".
         "envios env,categorias cat,postales post where env.id_destinatario=".
         "(select id_usuario from usuarios where correo='".$correo."')".
         "and usr.id_usuario=env.id_remitente and env.id_postal=post.id_postal and ". 
-        "post.id_categoria=cat.id_categoria order by fecha;";
-        
+        "post.id_categoria=cat.id_categoria order by fecha LIMIT ".$limite." OFFSET ".$offset.";";
         $resultado = mysqli_query($conexion,$sql);
+        
         while ($fila = mysqli_fetch_assoc($resultado)) {
             $recibo=new stdClass;
             $recibo->remitente =$fila["correo"];
@@ -215,5 +218,26 @@
         }
         return $recibos;
     }
+    function get_postales($conexion,$categoria,$offset,$limite){
+        $postales=array();
+        if($categoria="todas"){
+            $sql="select img,nombre from postales post,categorias cat where ".
+             "cat.id_categoria=post.id_categoria order by id_postal desc limit ".$limite." offset ".$offset.";";            
+        }
+        else{
+            $sql="select img,nombre from postales post,categorias cat where ".
+             "cat.id_categoria=post.id_categoria and cat.nombre='".$categoria."' order by id_postal desc limit ".$limite." offset ".$offset.";";  
+        }
+        //echo $sql;
+        $resultado = mysqli_query($conexion,$sql);
+        while ($fila = mysqli_fetch_assoc($resultado)) {
+            
+            $cadena="./postales/".$fila["nombre"]."/".$fila["img"];
+            
+            array_push($postales,$cadena);
+        }
+        return $postales;
+    }
+
     
 ?>

@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 
@@ -21,27 +21,29 @@
         function mostrarResultados() {
             $.ajax({
                 type : 'POST',
-                url : 'procesar.php',
+                url : 'postales.php',
                 data : "l",
-                success:function(data) {                    
+                success:function(data) {                     
                     var valores = eval(data);
-                    var lunes = valores[0];
-                    var martes = valores[1];
-                    var miercoles = valores[2];
-                    var jueves = valores[3];
-                    var viernes = valores[4];
-                    var sabado = valores[5];
-                    var domingo = valores[6];
+                    console.log(valores);
+                    var img1 = valores[0];
+                    var val1 = valores[1];
+                    var img2 = valores[2];                    
+                    var val2 = valores[3];
+                    var img3 = valores[4];
+                    var val3 = valores[5];
+                    var img4 = valores[6];
+                    var val4 = valores[7];
 
                     var ctx = document.getElementById('grafico');
 
                     var myChart = new Chart(ctx, {
                         type : 'bar',
                         data : {
-                            labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
+                            labels: [img1, img2, img3, img4],
                             datasets: [{
                                 label: '# de envios',
-                                data: [lunes, martes, miercoles, jueves, viernes, sabado, domingo],
+                                data: [val1, val2, val3, val4],
                                 backgroundColor: [
                                     'rgba(255, 99, 132, 0.2)',
                                     'rgba(54, 162, 235, 0.2)',
@@ -70,7 +72,7 @@
                             }]
                         }
                     }
-                });    
+                });
             }
                 }).fail(function(jqXHR, textStatus, errorThrown) {
                     alert('Error de AJAX');
