@@ -69,7 +69,7 @@ height: 3px;
         <li class="tab col s3"><a href="#test1">Usuarios</a></li>
         <li class="tab col s3"><a href="#test2">Postales</a></li>
         <li class="tab col s3"><a href="#test3">Estadisticas</a></li>
-        <li class="tab col s3"><a href="#test4">Generar Reporte</a></li>
+        <li class="tab col s3"><a href="./../functions/generar_pdf.php"  target="_blank ">Generar Reporte</a></li>
   
       </ul>
     </div>
