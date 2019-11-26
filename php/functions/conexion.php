@@ -69,6 +69,51 @@
     }
 
 
+    function validarExistenciaImagen($imagen,$conexion){
+        $sql = "SELECT * FROM postales WHERE img = '$imagen'";
+        $respuesta = mysqli_query($conexion,$sql);
+        $longitug = mysqli_num_rows($respuesta);
+
+        if($longitug >= 1){
+            return $longitug;
+        }
+        else{
+            return 0;
+        }
+    }
+
+    //funcion para dar de baja
+
+    function eliminarUsuario($correo,$conexion){
+
+        if(validarExistencia($correo,$conexion)){
+            $sql = "DELETE FROM usuarios WHERE correo = '$correo'";
+            mysqli_query($conexion,$sql);
+            return 1;
+        }
+        else{
+
+            return 0;
+
+        }
+        
+    }
+
+    function eliminarImagen($imagen,$conexion){
+
+        if(validarExistenciaImagen($imagen,$conexion)){
+            $sql = "DELETE FROM postales WHERE img ='$imagen'";
+            mysqli_query($conexion,$sql);
+            return 1;
+        }
+
+        else{
+            return 0;
+        }
+
+    }
+
+
     function registrarUsuario($nombre,$primer_ap,$segundo_ap,$correo,$fechaNa,$genero,$contrasena,$conexion){
 
        //preparamos la instruccion sql
