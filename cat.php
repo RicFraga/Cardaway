@@ -6,7 +6,7 @@
 
 $category=$_GET["id"];
 $dir = __DIR__ . DIRECTORY_SEPARATOR ;
-$dir.="Postales".DIRECTORY_SEPARATOR.$category.DIRECTORY_SEPARATOR;
+$dir.="postales".DIRECTORY_SEPARATOR.$category.DIRECTORY_SEPARATOR;
 $images = glob($dir . "*.{jpg,jpeg,gif,png}", GLOB_BRACE);
 $index=(int)(count($images)/3);
 
@@ -123,7 +123,7 @@ $index=(int)(count($images)/3);
         echo '<div class="myModal">';
         echo '<div class="myCard">';
         echo '<div class="card-content">';
-        echo '<a class="waves-effect waves-light btn center" id="enviar" href="./php/pages/envio.php">Enviar</a>';
+        echo '<a class="waves-effect waves-light btn center" id="enviar" >Enviar</a>';
 
         echo '</div>';
         echo '<div class="container" id="modal-container">';
@@ -163,21 +163,21 @@ $index=(int)(count($images)/3);
           <div class="gallery-col col s4">
             <?php
               for($i=0;$i<$index;$i++) {
-                printf("<img src='Postales/%s/%s' class='gal-img'>", $category,basename($images[$i]));
+                printf("<img src='postales/%s/%s' class='gal-img'>", $category,basename($images[$i]));
               }
             ?>
           </div>
           <div class="gallery-col col s4">
             <?php
               for($i=$i;$i<($index*2);$i++) {
-                printf("<img src='Postales/%s/%s' class='gal-img'>", $category,basename($images[$i]));
+                printf("<img src='postales/%s/%s' class='gal-img'>", $category,basename($images[$i]));
               }
             ?>
           </div>
           <div class="gallery-col col s4">
             <?php
               for($i=$i;$i<count($images);$i++) {
-                printf("<img src='Postales/%s/%s' class='gal-img'>", $category,basename($images[$i]));
+                printf("<img src='postales/%s/%s' class='gal-img'>", $category,basename($images[$i]));
               }
             ?>
           </div>

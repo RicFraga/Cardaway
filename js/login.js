@@ -83,7 +83,9 @@ $.ajax({
       //console.log(respAX);
       //alert(respAX);
       var i=0;
+      //alert(respAX);
       var AX = JSON.parse(respAX);
+     
       AX.postales.forEach(element => {
               offset+=1;
               $("#cargador"+String(i%3))[0].innerHTML += 

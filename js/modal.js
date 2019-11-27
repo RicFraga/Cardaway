@@ -39,6 +39,7 @@ function postal_session(){
     var re=/\.*postales/;
     cadenas=cadena.split(re);
     var postal="./../../postales"+cadenas[1];
+    //alert(cadena);
     $.ajax({
       method:"POST",
       url:"./php/functions/session_postal.php",
