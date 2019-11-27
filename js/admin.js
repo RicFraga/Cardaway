@@ -1,4 +1,7 @@
 $(document).ready(function(){
+    $(document).ready(function(){
+        $('select').formSelect();
+      });
 
     $("#cambios").validetta({
         display:'bubble',

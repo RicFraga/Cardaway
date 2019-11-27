@@ -54,8 +54,6 @@ function anti_parser($cad){
     sscanf($cad,"%d-%d-%d",$y,$m,$d);
     $aux=sprintf  ("%s %02d , %s %d",zeller($y,$m,$d),$d,$meses[$m-1],$y);
     return $aux;
-
-
 }
 function zeller($y,$m,$d){
 	 $constantes=array(0,3,2,5,0,3,5,1,4,6,2,4);
