@@ -416,12 +416,11 @@
                             </td>
                           </tr>
                         </table>
-                        <p><br><img src='cid:images' alt=""></p>
+                        <p><br><img src='cid:images' alt="Embedded Image" height="128" width="128"></p>
                         <table class="body-signature-block">
                           <tr>
                             <td class="body-signature-cell">
                               <p>Gracias por usar Cardaway</p>
-                              <p><a href="C:\xampp\htdocs\Cardaway\php\functions\printPdf.php">Imprimir en PDF</a></p>
                             </td>
                           </tr>
                         </table>
