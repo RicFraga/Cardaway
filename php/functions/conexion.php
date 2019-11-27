@@ -1,6 +1,6 @@
 <?php
 
-    $sevidor = "127.0.0.1";
+    $sevidor = "localhost";
     $usuarioBD = "root";
     $contrasenaBD = "";//Movi esta linea para que todos tengamos la misma base att:Hadad Bautista
     $nombreBD = "web";

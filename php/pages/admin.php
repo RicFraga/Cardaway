@@ -59,7 +59,7 @@ background
           <a href="./../../" class="brand-logo">CARDAWAY-MyAdmin</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
         
-            <li id="nav-li"><a href="./../functions/cerrar_session.php">Cerrar Sesión</a></li>
+            <li id="nav-li"><a href="./../functions/cerrar_session.php">Cerrar Sesion</a></li>
           </ul>
         </div>
       </nav>
@@ -88,8 +88,14 @@ background
     ?>
 
     <div class="container">
+        <br><br><br>
+        <form class="center">
+        <a button class="waves-effect btn-large modal-trigger #1565c0 blue darken-3" href="#modal1">Eliminar Usuario</a></button>
+        </form>
         <br>
-        <br>
+       
+        
+        
         <div class="row">
             <div class="col s12 center">
                 <table class="striped" id="mitabla">
@@ -99,8 +105,9 @@ background
                     <tr>
                         <th class="card-panel #80deea cyan lighten-3">Nombre</th>     
                         <th class="card-panel #80deea cyan lighten-3">Correo</th>
-                        <th class="card-panel #80deea cyan lighten-3">Nacimiento</th>    
-                        <th class="card-panel #80deea cyan lighten-3">Eliminar</th>                
+                        <th class="card-panel #80deea cyan lighten-3">Nacimiento</th> 
+                             
+                                     
                     </tr>
 
                 </thead>
@@ -119,14 +126,14 @@ background
       
                     <td><?php echo $consulta['correo']?></td>
                     <td><?php echo $consulta['fecha_nac']?></td>
-                    <form>
-                    <td><a  id="boton" type="submit" name="submit" class="waves-effect btn modal-trigger #80deea cyan lighten-3" href="#modal1">Eliminar</button></td>
-                    </form>
                    
-                    
+                   
+     
                 </tr>
               
                 <?php }?>
+
+                   
         
                 </table>
             </div>
@@ -175,8 +182,7 @@ background
 
 
     <div id="test2" class="col s12">
-        <br>
-        <br>    
+           
         <div class="container">
 
             <div class="row">
@@ -193,6 +199,11 @@ background
              
                 </div>
             </div>
+
+            <form class="center">
+            <a button class="waves-effect btn-large modal-trigger #1565c0 blue darken-3" href="#modal2">Eliminar postal</a></button>
+            </form>
+            <br>
             <!-- aqui va conexion-->
             <?php 
             $sql2 = "SELECT *FROM postales";
@@ -206,8 +217,8 @@ background
 
                  <thead>
                    <tr>
-                    <th class="card-panel #80deea cyan lighten-3">Imagen</th>
-                    <th class="card-panel #80deea cyan lighten-3">Eliminar</th>
+                    <th class="card-panel #80deea cyan lighten-3">Id</th>
+                    <th class="card-panel #80deea cyan lighten-3">postal</th>
 
                    </tr>
 
@@ -224,8 +235,8 @@ background
                  ?>
 
                 <tr>
-                    <td><?php echo $img['img'] ?></td>
-                    <td><a class="waves-effect btn modal-trigger #80deea cyan lighten-3"  href ="#modal2">Eliminar</a></td>
+                    <td><?php echo $img['id_postal'] ?></td>
+                    <td><?php echo $img['img']?></td>
                 </tr>
                   <?php }?>
 

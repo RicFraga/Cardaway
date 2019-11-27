@@ -25,7 +25,9 @@ $(document).ready(function(){
                     Swal.fire(
                         'Eliminacion Exitosa!',
                         'success'
-                    )
+                    ).then(function(){
+                        location.reload();
+                    })
                     
                 }
 
