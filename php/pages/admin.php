@@ -39,6 +39,11 @@ background: black;
 height: 3px; 
 }
 
+body{
+
+background
+  
+}
 
 
 
@@ -54,7 +59,7 @@ height: 3px;
           <a href="./../../" class="brand-logo">CARDAWAY-MyAdmin</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
         
-            <li id="nav-li"><a href="./../functions/cerrar_session.php">Cerrar Sesión</a></li>
+            <li id="nav-li"><a href="./../functions/cerrar_session.php">Cerrar Sesion</a></li>
           </ul>
         </div>
       </nav>
@@ -69,7 +74,7 @@ height: 3px;
         <li class="tab col s3"><a href="#test1">Usuarios</a></li>
         <li class="tab col s3"><a href="#test2">Postales</a></li>
         <li class="tab col s3"><a href="#test3">Estadisticas</a></li>
-        <li class="tab col s3"><a href="./../functions/generar_pdf.php"  target="_blank ">Generar Reporte</a></li>
+        <li class="tab col s3"><a href="./../functions/generar_pdf.php" target="_blank ">Generar Reporte</a></li>
   
       </ul>
     </div>
@@ -83,8 +88,14 @@ height: 3px;
     ?>
 
     <div class="container">
+        <br><br><br>
+        <form class="center">
+        <a button class="waves-effect btn-large modal-trigger #1565c0 blue darken-3" href="#modal1">Eliminar Usuario</a></button>
+        </form>
         <br>
-        <br>
+       
+        
+        
         <div class="row">
             <div class="col s12 center">
                 <table class="striped" id="mitabla">
@@ -94,8 +105,9 @@ height: 3px;
                     <tr>
                         <th class="card-panel #80deea cyan lighten-3">Nombre</th>     
                         <th class="card-panel #80deea cyan lighten-3">Correo</th>
-                        <th class="card-panel #80deea cyan lighten-3">Nacimiento</th>    
-                        <th class="card-panel #80deea cyan lighten-3">Eliminar</th>                
+                        <th class="card-panel #80deea cyan lighten-3">Nacimiento</th> 
+                             
+                                     
                     </tr>
 
                 </thead>
@@ -114,14 +126,14 @@ height: 3px;
       
                     <td><?php echo $consulta['correo']?></td>
                     <td><?php echo $consulta['fecha_nac']?></td>
-                    <form>
-                    <td><a  id="boton" type="submit" name="submit" class="waves-effect btn modal-trigger #80deea cyan lighten-3" href="#modal1">Eliminar</button></td>
-                    </form>
                    
-                    
+                   
+     
                 </tr>
               
                 <?php }?>
+
+                   
         
                 </table>
             </div>
@@ -170,8 +182,7 @@ height: 3px;
 
 
     <div id="test2" class="col s12">
-        <br>
-        <br>    
+           
         <div class="container">
 
             <div class="row">
@@ -188,6 +199,11 @@ height: 3px;
              
                 </div>
             </div>
+
+            <form class="center">
+            <a button class="waves-effect btn-large modal-trigger #1565c0 blue darken-3" href="#modal2">Eliminar postal</a></button>
+            </form>
+            <br>
             <!-- aqui va conexion-->
             <?php 
             $sql2 = "SELECT *FROM postales";
@@ -201,8 +217,8 @@ height: 3px;
 
                  <thead>
                    <tr>
-                    <th class="card-panel #80deea cyan lighten-3">Imagen</th>
-                    <th class="card-panel #80deea cyan lighten-3">Eliminar</th>
+                    <th class="card-panel #80deea cyan lighten-3">Id</th>
+                    <th class="card-panel #80deea cyan lighten-3">postal</th>
 
                    </tr>
 
@@ -219,8 +235,8 @@ height: 3px;
                  ?>
 
                 <tr>
-                    <td><?php echo $img['img'] ?></td>
-                    <td><a class="waves-effect btn modal-trigger #80deea cyan lighten-3"  href ="#modal2">Eliminar</a></td>
+                    <td><?php echo $img['id_postal'] ?></td>
+                    <td><?php echo $img['img']?></td>
                 </tr>
                   <?php }?>
 
@@ -275,9 +291,28 @@ height: 3px;
     </div>
 <!-------------------------------------------------------------->
 
-    <div id="test3" class="col s12">HDSPTM ESTOY MAMADISIMO</div>
+    
 
-    <div id="test4" class="col s12">HDSPTM ESTOY MAMADISIMO x2</div>
+    <div id="test3" class="col s12">
+
+            <form class ="center-align">
+
+            <a button class ="btn-large #1565c0 blue darken-3" href="../functions/grafica_categorias_mas_gustadas.php" target="_blank">Categorias mas gustadas</button></a>
+            <a button class ="btn-large #1565c0 blue darken-3" href="../functions/grafica_envios_semanales.php" target="_blank">Envios semanales</button></a>
+            <a button class ="btn-large #1565c0 blue darken-3" href="../functions/grafica_generos.php" target="_blank">Genero</button></a>
+            <a button class ="btn-large #1565c0 blue darken-3" href="../functions/grafica_postales_mas_gustadas.php" target="_blank">Postales mas gustadas</button></a>
+            </form>
+
+     
+
+
+    
+    
+    </div>
+
+
+
+
   </div>
     
 

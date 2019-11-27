@@ -24,17 +24,23 @@ $(document).ready(function(){
                     Swal.fire(
                         'Eliminacion Exitosa!',
                         'success'
-                    )
+                    ).then(function(){
+                        location.reload();
+                    })
                     
                 }
 
                 else{
                     Swal.fire(
                         'Alerta!',
-                        'Correo no existente!',
+                        'Correo invalido!',
                         'warning',
                         
                     )
+
+                        
+
+                    
                     
                 }
 
