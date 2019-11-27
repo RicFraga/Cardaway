@@ -239,6 +239,13 @@
         }
         return $postales;
     }
+    function insert_envio($nombrePost,$remitente,$destinatario,$mensaje,$conexion){
+        $sql='insert into envios values((select id_postal from postales where '.
+        'postales.img="'.$nombrePost.'"),(select id_usuario from usuarios where '.
+        'usuarios.correo="'.$remitente.'"),(select id_usuario from usuarios where '.
+        'usuarios.correo="'.$destinatario.'"),"'.$mensaje.'",NOW());';
+        mysqli_query($conexion,$sql);
+    }
 
     
 ?>

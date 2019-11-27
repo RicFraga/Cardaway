@@ -1,5 +1,7 @@
 <?php
 session_start();
+//echo $_SESSION["postal"];
+//echo $_SESSION["usuario"];
 ?>
 
 <!DOCTYPE html> 
@@ -17,7 +19,9 @@ session_start();
         <!--Referencias a archivos JS-->     
         <script src="https://use.fontawesome.com/9aabbc7573.js"></script>
         <script src="../../js/jquery-3.4.1.js"></script>
-        <script src="../../js/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js"></script>
+    
         
     </head>
     <body>  
@@ -53,7 +57,9 @@ session_start();
 
                    <input type="submit" value="Enviar mensaje" id="btnSend" name="send">
                     <?php
+                    include("./../functions/conexion.php");
                         if (isset($_POST['send'])){
+                            if(validarExistencia($_POST['recipent_email'],$conexion)){
                             include("./../functions/sendemail.php");//Mando a llamar la funcion que se encarga de enviar el correo electronico
                             
                             /*Configuracion de variables para enviar el correo*/
@@ -68,9 +74,22 @@ session_start();
                             $mail_setFromName=$_POST['subject'];
                             $txt_message="Enviado Por: ".$remitente."<br>".str_replace("\n","<br>",$_POST['msj']);
                             $mail_subject=$_POST['subject'];
-                            
+                            sscanf($_SESSION["postal"],"./../../postales/%[^/]/%s",$cate,$nom_postal);
+                            insert_envio($nom_postal,$remitente,$_POST['recipent_email'],$_POST["msj"],$conexion);
+                            //echo("Nombre de la postal".$nom_postal);
                             sendemail($mail_username,$mail_userpassword,$mail_setFromEmail,$mail_setFromName,$mail_addAddress,$txt_message,$mail_subject,$template);//Enviar el mensaje
+                            }
+                            else{
+                                echo"<script> 
+                                Swal.fire(
+                                    'Cardaway',
+                                    'El usuario no es parte de Cardaway',
+                                    'warning'
+                                )
+                                 </script>";
+                            }
                         }
+                        
                     ?>
                 </div>
             </form>
