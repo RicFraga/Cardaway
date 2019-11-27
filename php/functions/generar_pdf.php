@@ -48,8 +48,8 @@ $consulta = "
 	Select img, count(envios.id_postal) tot
 	From envios, postales
 	Where envios.id_postal = postales.id_postal
-	And fecha_hora >= curdate() - INTERVAL DAYOFWEEK(curdate())+6 DAY
-	And fecha_hora < curdate() - INTERVAL DAYOFWEEK(curdate())-1 DAY
+	And fecha_hora >= curdate() -6 
+	And fecha_hora < curdate() +1
 	Group by img
 	Order by tot Desc
 	Limit 8
@@ -78,8 +78,8 @@ $consulta = "
 	Select cat.nombre nom, count(cat.nombre) tot
 	From envios env, categorias cat, postales post
 	Where cat.id_categoria = post.id_categoria and post.id_postal=env.id_postal
-	And fecha_hora >= curdate() - INTERVAL DAYOFWEEK(curdate())+6 DAY
-	And fecha_hora < curdate() - INTERVAL DAYOFWEEK(curdate())-1 DAY
+	And fecha_hora >= curdate()-6 
+	And fecha_hora < curdate()+1 
 	Group by cat.nombre
 	Order by tot Desc	
 ";
@@ -177,8 +177,8 @@ $y = $y + 40;
 $consulta = "
 	Select count(dedicatoria) tot
 	From envios
-	Where fecha_hora >= curdate() - INTERVAL DAYOFWEEK(curdate())+6 DAY
-	And fecha_hora < curdate() - INTERVAL DAYOFWEEK(curdate())-1 DAY
+	Where fecha_hora >= curdate() - 6
+	And fecha_hora < curdate() +1
 ";
 
 $pdf->SetXY($x, $y);
@@ -200,10 +200,10 @@ $pdf->Cell(10, 10, "", 0, 1, 'C', 0);
 // Detalles de los envios
 
 $consulta = "
-	Select id_postal, id_remitente, id_destinatario, fecha_hora
+	Select img, id_remitente, id_destinatario, fecha_hora
 	From envios
-	Where fecha_hora >= curdate() - INTERVAL DAYOFWEEK(curdate())+6 DAY
-	And fecha_hora < curdate() - INTERVAL DAYOFWEEK(curdate())-1 DAY	
+	Where fecha_hora >= curdate() - 6 
+	And fecha_hora < curdate() +1 	
 	Order by fecha_hora Desc
 ";
 
