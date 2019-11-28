@@ -13,6 +13,7 @@ function sendemail($mail_username,$mail_userpassword,$mail_setFromEmail,$mail_se
 	$mail->addReplyTo($mail_setFromEmail, $mail_setFromName);//Introduzca la dirección de la que debe responder. El segundo parámetro opcional para esta función es el nombre que se mostrará para responder
 	$mail->addAddress($mail_addAddress);   // Agregar quien recibe el e-mail enviado
 	
+	//	session_start();
 	$postal=$_SESSION["postal"];
 	$mail->AddEmbeddedImage($postal,'images');
 
