@@ -251,5 +251,15 @@
         'where categorias.nombre="'.$categoria.'"),"'.$nombrePost.'");';
         return mysqli_query($conexion, $sql);
     }   
-    
+    function admin($usuario,$contrasena,$conexion){
+        $sql='select * from admin where admin.nombre="'.$usuario.'" and admin.contrasena="'.$contrasena.'"';
+        $respuesta= mysqli_query($conexion, $sql);
+        $longitud= mysqli_num_rows($respuesta);
+        if($longitud ==1){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 ?>

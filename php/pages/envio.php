@@ -2,6 +2,10 @@
 session_start();
 //echo $_SESSION["postal"];
 //echo $_SESSION["usuario"];
+  if(!isset($_SESSION["usuario"]) || (!isset($_SESSION["postal"]))){
+          header("location:./../../index.php");
+      }
+
 ?>
 
 <!DOCTYPE html> 
@@ -77,8 +81,24 @@ session_start();
                             sscanf($_SESSION["postal"],"./../../postales/%[^/]/%s",$cate,$nom_postal);
                             insert_envio($nom_postal,$remitente,$_POST['recipent_email'],$_POST["msj"],$conexion);
                             //echo("Nombre de la postal".$nom_postal);
-                            sendemail($mail_username,$mail_userpassword,$mail_setFromEmail,$mail_setFromName,$mail_addAddress,$txt_message,$mail_subject,$template);//Enviar el mensaje
-                            }
+                            if(sendemail($mail_username,$mail_userpassword,$mail_setFromEmail,$mail_setFromName,$mail_addAddress,$txt_message,$mail_subject,$template)){//Enviar el mensaje
+                                unset($_SESSION["postal"]);
+                                echo"
+                                <script> 
+                                const myswal = Swal.mixin({
+                                    onClose: () => {
+                                        location.href ='./../../index.php';
+                                    }
+                                  })
+                                
+                                myswal.fire(
+                                    'Cardaway',
+                                    'Envio Realizado Correctamente',
+                                    'success'
+                                )
+                                 </script>";
+                        }
+                    }
                             else{
                                 echo"<script> 
                                 Swal.fire(
@@ -88,8 +108,7 @@ session_start();
                                 )
                                  </script>";
                             }
-                        }
-                        
+                        }  
                     ?>
                 </div>
             </form>

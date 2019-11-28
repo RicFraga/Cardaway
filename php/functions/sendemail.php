@@ -28,7 +28,8 @@ function sendemail($mail_username,$mail_userpassword,$mail_setFromEmail,$mail_se
 		echo '<p style="color:red">No se pudo enviar el mensaje..';
 		echo 'Error de correo: ' . $mail->ErrorInfo."</p>";
 	} else {
-		echo '<p style="color:green">Tu mensaje ha sido enviado!</p>';
+		return true;
 	}
+	return false;
 }
 ?>

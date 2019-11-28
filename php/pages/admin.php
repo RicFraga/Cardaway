@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  if(!isset($_SESSION["admin"])){
+          header("location:./../../index.php");
+      }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -59,7 +65,7 @@
             <a href="./../../" class="brand-logo">CARDAWAY-MyAdmin</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li id="nav-li">
-                <a href="./../functions/cerrar_session.php">Cerrar Sesion</a>
+                <a href="./../functions/cerrar_session_admin.php">Cerrar Sesion</a>
               </li>
             </ul>
           </div>
@@ -196,7 +202,7 @@
               </button>
             </div>
             <a class="right"
-              >*Formatos Aceptados:(gif,jpg,png) , Tamaño recomendado:500*500
+              >*Formatos Aceptados:(gif,jpg,png) 
             </a>
           </div>
         </form>
