@@ -57,7 +57,7 @@ session_start();
                     <label for="Msj">Mensaje*</label>
                     <textarea id="Msj" name="msj" required></textarea>
                     
-                    <label for="postal">La imagen seleccionada se cargara de forma automatica.</label>
+                    <label for="postal">La imagen seleccionada se cargará de forma automática.</label>
 
                    <input type="submit" value="Enviar mensaje" id="btnSend" name="send">
                     <?php
