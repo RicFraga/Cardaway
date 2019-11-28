@@ -18,7 +18,7 @@ $(document).ready(function(){
 
                 var AX = JSON.parse(respAX);
 
-                if(AX.resp != 0){
+                if(AX.resp != 0 && AX.resp != -1){
 
                     Swal.fire(
                         'Bienvenid@!',
@@ -32,7 +32,17 @@ $(document).ready(function(){
 
                       })
                 }
+                else if(AX.resp==-1){
+                    Swal.fire(
+                        'Bienvenid@!',
+                         "Administrador",
+                        'success'
+                        
+                      ).then(function(){
+                        window.location.replace("./php/pages/admin.php");
+                      })
 
+                }
                 else{
 
                     Swal.fire(

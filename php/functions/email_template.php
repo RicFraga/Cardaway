@@ -416,9 +416,13 @@
                             </td>
                           </tr>
                         </table>
+<<<<<<< HEAD
     
                         {{<p><br><img src='cid:images' alt="Embedded Image" height="128" width="128"></p>}}
                        
+=======
+                        <p><br><img src='cid:images' alt="Embedded Image" ></p>
+>>>>>>> da2fd78e28f82f77c8aaa9d1a604e4d969ab188d
                         <table class="body-signature-block">
                           <tr>
                             <td class="body-signature-cell">
