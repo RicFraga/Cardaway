@@ -11,8 +11,7 @@
               require_once './email_template.php';
               $html = ob_get_clean();
 
-              $html2pdf = new Html2Pdf('P', 'A4', 'es');
-              
+              $html2pdf = new Html2Pdf('P', 'A4', 'es', 'UTF-8');
               $html2pdf->writeHTML($html);
               $html2pdf->output(postal.pdf);
             }catch(Html2PdfException $e){
