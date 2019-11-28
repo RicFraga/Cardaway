@@ -418,7 +418,7 @@
                         </table>
 <<<<<<< HEAD
     
-                        {{<p><br><img src='cid:images' alt="Embedded Image" height="128" width="128"></p>}}
+                        <p><br><img src='cid:images' alt="Embedded Image" height="128" width="128"></p>
                        
 =======
                         <p><br><img src='cid:images' alt="Embedded Image" ></p>
