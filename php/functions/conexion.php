@@ -246,6 +246,10 @@
         'usuarios.correo="'.$destinatario.'"),"'.$mensaje.'",NOW());';
         mysqli_query($conexion,$sql);
     }
-
+    function inserta_postal($nombrePost,$categoria,$conexion){
+        $sql='insert into postales values(null,(select id_categoria from categorias '.
+        'where categorias.nombre="'.$categoria.'"),"'.$nombrePost.'");';
+        return mysqli_query($conexion, $sql);
+    }   
     
 ?>

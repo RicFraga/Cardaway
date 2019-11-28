@@ -38,7 +38,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js"></script>
     <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
-    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+
 
     <style>
       .tabs .tab a {
@@ -166,7 +166,7 @@
 
     <div id="test2" class="col s12">
       <div class="container">
-        <form id="imag ">
+        <form  id="form_postal" enctype="multipart/form-data">
           <div class="row">
             <div class="file-field input-field col s6">
               <div class="btn">

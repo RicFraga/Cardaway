@@ -150,7 +150,7 @@ $pdf->Cell(10, 10, "", 0, 1, 'C', 0);
 
 $consulta = "
 	Select fecha_nac
-	From usuarios
+	From usuarios order by fecha_nac
 ";
 
 $y = $y + 15;
@@ -200,32 +200,33 @@ $pdf->Cell(10, 10, "", 0, 1, 'C', 0);
 // Detalles de los envios
 
 $consulta = "
-	Select img, id_remitente, id_destinatario, fecha_hora
-	From envios
-	Where fecha_hora >= curdate() - 6 
-	And fecha_hora < curdate() +1 	
-	Order by fecha_hora Desc
+Select img, id_remitente, id_destinatario, fecha_hora
+From envios env,postales post
+Where fecha_hora >= curdate() - 6 
+And fecha_hora < curdate() +1
+and env.id_postal=post.id_postal 	
+Order by fecha_hora Desc
 ";
 
-$x = 55;
+$x = 30;
 $y = 40;
 $pdf->SetXy($x, $y);
 
 $resultado = $mysqli->query($consulta);
 $pdf->SetFont('Arial','B',10);
-$pdf->Cell(20, 10, utf8_decode("Postal"), 0, 0, 'C', 0);
+$pdf->Cell(50, 10, utf8_decode("Postal"), 0, 0, 'C', 0);
 $pdf->Cell(20, 10, utf8_decode("Remitente"), 0, 0, 'C', 0);
 $pdf->Cell(20, 10, utf8_decode("Destinatario"), 0, 0, 'C', 0);
 $pdf->Cell(40, 10, utf8_decode("Fecha"), 0, 1, 'C', 0);
 
 $pdf->SetFont('Arial','',10);
-$x = 55;
+$x = 30;
 $y = 50;
 $pdf->SetXy($x, $y);
 
 $cant = 0;
 while($row = $resultado->fetch_assoc()) {	
-	$pdf->Cell(20, 10, $row['id_postal'], 1, 0, 'C', 0);
+	$pdf->Cell(50, 10, $row['img'], 1, 0, 'C', 0);
 	$pdf->Cell(20, 10, $row['id_remitente'], 1, 0, 'C', 0);
 	$pdf->Cell(20, 10, $row['id_destinatario'], 1, 0, 'C', 0);
 	$pdf->Cell(40, 10, $row['fecha_hora'], 1, 1, 'C', 0);
