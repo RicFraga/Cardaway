@@ -70,7 +70,7 @@ session_start();
                             $mail_username="Cardaway.sender@gmail.com";//Correo electronico saliente ejemplo: tucorreo@gmail.com
                             $mail_userpassword="hola1234#";//Tu contraseña de gmail
                             $template="./../functions/email_template.php";//Ruta de la plantilla HTML para enviar nuestro mensaje
-                            //session_start();
+                           // session_start();
                             $remitente=$_SESSION["usuario"];
                             /*Inicio captura de datos enviados por $_POST para enviar el correo */
                             $mail_setFromEmail="Cardaway.sender@gmail.com";

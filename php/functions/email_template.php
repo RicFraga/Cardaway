@@ -416,7 +416,11 @@
                             </td>
                           </tr>
                         </table>
+<<<<<<< HEAD
                         <p><br><img src='cid:images' alt="Embedded Image" ></p>
+=======
+                        <p><br><img src='cid:images' alt="Embedded Image" height="400px" width="400px"></p>
+>>>>>>> 51221d001236985f4a5e2af9c6ec35deebb99b31
                         <table class="body-signature-block">
                           <tr>
                             <td class="body-signature-cell">
