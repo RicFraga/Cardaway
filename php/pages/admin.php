@@ -184,7 +184,7 @@
               </div>
             </div>
             <div class="input-field col s6">
-              <select>
+              <select id="selector">
                 <option value="Amor">Amor</option>
                 <option value="Fechas_fest">Fechas Festivas</option>
                 <option value="Paisajes">Paisajes</option>

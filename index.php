@@ -23,7 +23,11 @@
 
   
   <script src ="./js/jquery-3.4.1.min.js"></script>
-  
+  <script>
+    $(document).ready(function(){
+      $('.sidenav').sidenav();
+    });
+  </script>
    <!--cosas para que funciine sweetAlert-->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js"></script>
@@ -63,9 +67,14 @@
     <nav>
       <div class="nav-wrapper">
         <a href="#" class="brand-logo">CARDAWAY</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           
           <?php
+                  if(isset($_SESSION["admin"])){
+                   
+                    echo '<li id="nav-li"><a href="./php/pages/admin.php"><button class="btn">Administracion</button></a></li>';
+        }
           if(!isset($_SESSION["usuario"])){
               echo '<li id="nav-li"><a class ="waves-effect waves-light btn modal-trigger" href="#login">Iniciar Sesion</a></li>';
               echo '<li id="nav-li"><a href="./php/pages/formulario.php"><button class="btn">Crea tu Cuenta</button></a></li>';
@@ -78,6 +87,21 @@
           </ul>
       </div>
     </nav>
+    <ul class="sidenav" id="mobile-demo">
+    <li id="nav-mobile" class="right hide-on-med-and-down">
+          
+          <?php
+          if(!isset($_SESSION["usuario"])){
+              echo '<li id="nav-li"><a class ="waves-effect waves-light btn modal-trigger" href="#login">Iniciar Sesion</a></li>';
+              echo '<li id="nav-li"><a class ="waves-effect waves-light btn modal-trigger" href="./php/pages/formulario.php">Crea tu Cuenta</a></li>';
+          }
+          else{
+            echo  '<li id="nav-li"><a href="./php/pages/user_page.php">Mi cuenta</a></li>';
+            echo  '<li id="nav-li"><a href="./php/functions/cerrar_session.php">Cerrar Sesión</a></li>';
+          }
+          ?>
+          </li>
+    </ul>
   </header>
 
 

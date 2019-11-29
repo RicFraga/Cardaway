@@ -12,7 +12,8 @@ $(document).ready(function(){
       $("#form_postal").submit(function(e) {
         e.preventDefault();
         var formData=new FormData($("#form_postal")[0]);
-        var nombre_cat=$('select').formSelect('getSelectedValues');
+        var nombre_cat=$('#selector').val();
+        //alert(nombre_cat);
         formData.append("categoria",nombre_cat);
         $.ajax({
 
@@ -23,7 +24,7 @@ $(document).ready(function(){
             contentType: false,
             processData: false,
             success:function(respAX){
-                alert(respAX);
+                //alert(respAX);
                 var AX = JSON.parse(respAX);
                 if(AX.msj == 1){
                     myswal.fire(

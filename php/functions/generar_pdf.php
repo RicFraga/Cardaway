@@ -172,7 +172,7 @@ while($row = $resultado->fetch_assoc()) {
 // Cantidad de postales enviadas
 
 $x = 30;
-$y = $y + 40;
+$y = $y + 20;
 
 $consulta = "
 	Select count(dedicatoria) tot
